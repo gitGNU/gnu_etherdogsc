@@ -1,0 +1,53 @@
+<EtherDogs is a Simple Multi Protocol Packet Sniffer>
+Copyright © <2012-2013> <Jose Maria Micoli>
+
+This file is part of EtherDogs.
+
+    EtherDogs is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    EtherDogs is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with EtherDogs. If not, see <http://www.gnu.org/licenses/>.
+
+=============================================================================================
+-EtherDogs is a Simple Multi Protocol Packet Sniffer on ethernet networks.
+=============================================================================================
+-EtherDogs is Free Software for more information read de COPYING file in this folder.
+=============================================================================================
+
+-To install the EtherDogs in your GNU/Linux OS run the Makefile on GNU/Make in the terminal.
+=============================================================================================
+-To contact de developer send email to josemaria.micoli@gmail.com ou cr4sh.dump@gmail.com
+=============================================================================================
+-Readme to install correctly this software:
+=============================================================================================
+-Commands GNU/Make to compile, install clean and remove EtherDogs on yous system:
+=============================================================================================
+|make;make install;make clean; 	/*to compile;install the program;and remove de trash files*/|
+|make remove 			/*to uninstall the program*/				    |
+|make 				/*compile*/    						    |
+|make install 			/*installing*/						    |
+|make clean 			/*remove the trash files*/				    |
+=============================================================================================
+-This software only run on GNU/Linux Operating Systems and is development on GNU/Linux
+Slackware 14.0 x86 but i'm realize the run test and compiling in other distros
+GNU/Linux lists any on nexts lines:
+
+	+-----------+
+	|-Slackware-|
+	|-Debian-   |											
+	|-Ubuntu-   |
+	|-BackTrack-|
+	|-Fedora-   |
+	+-----------+
+
+Good luck!
+
+/*EOF*/
