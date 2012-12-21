@@ -28,13 +28,14 @@ This file is part of EtherDogs.
 =============================================================================================
 -Readme to install correctly this software:
 =============================================================================================
--Commands GNU/Make to compile, install clean and remove EtherDogs on yous system:
+-Commands GNU/Make to compile, install clean, remove and debug EtherDogs on yous system:
 =============================================================================================
 |make;make install;make clean; 	/*to compile;install the program;and remove de trash files*/|
 |make remove 			/*to uninstall the program*/				    |
 |make 				/*compile*/    						    |
 |make install 			/*installing*/						    |
 |make clean 			/*remove the trash files*/				    |
+|make debug                     /*compiling in -g options with gcc and open into the gdb*/  |
 =============================================================================================
 -This software only run on GNU/Linux Operating Systems and is development on GNU/Linux
 Slackware 14.0 x86 but i'm realize the run test and compiling in other distros
@@ -42,8 +43,7 @@ GNU/Linux lists any on nexts lines:
 
 	+-----------+
 	|-Slackware-|
-	|-Debian-   |											
-	|-Ubuntu-   |
+	|-Debian-   |											       |-Ubuntu-   |
 	|-BackTrack-|
 	|-Fedora-   |
 	+-----------+

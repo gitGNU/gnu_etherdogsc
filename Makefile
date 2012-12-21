@@ -28,3 +28,6 @@ remove:
 	rm /usr/bin/etherdogs
 install:
 	cp etherdogs /usr/bin/
+debug:main.c ether.c icmp.c ip.c tcp.c udp.c data.c
+	gcc -g main.c ether.c icmp.c ip.c tcp.c udp.c data.c -o etherdogs_dbg
+	gdb etherdogs_dbg
