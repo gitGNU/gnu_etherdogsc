@@ -5,29 +5,28 @@
 #This file is part of EtherDogs.
 #
 #    EtherDogs is free software: you can redistribute it and/or modify
-#        it under the terms of the GNU General Public License as published by
-#	    the Free Software Foundation, either version 3 of the License, or
-#	        (at your option) any later version.
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
 #
 #    EtherDogs is distributed in the hope that it will be useful,
-#        but WITHOUT ANY WARRANTY; without even the implied warranty of
-#	    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#	        GNU General Public License for more details.
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
 #
 #    You should have received a copy of the GNU General Public License
-#        along with EtherDogs. If not, see <http://www.gnu.org/licenses/>.
-#	
-#
-etherdogs:main.c ether.c icmp.c ip.c tcp.c udp.c data.c
-	gcc -c main.c ether.c icmp.c ip.c tcp.c udp.c data.c
-	gcc main.o ether.o icmp.o ip.o tcp.o udp.o data.o -o etherdogs
+#    along with EtherDogs. If not, see <http://www.gnu.org/licenses/>.
+
+
+etherdogs:main.c data.c ether.c ip.c udp.c tcp.c icmp.c
+	gcc -c -lpcap main.c data.c ether.c ip.c udp.c tcp.c icmp.c 
+	gcc -o etherdogs -lpcap main.o data.o ether.o ip.o udp.o tcp.o icmp.o
 clean:
 	rm *.o
 	rm etherdogs
-remove:
-	rm /usr/bin/etherdogs
 install:
 	cp etherdogs /usr/bin/
-debug:main.c ether.c icmp.c ip.c tcp.c udp.c data.c
-	gcc -g main.c ether.c icmp.c ip.c tcp.c udp.c data.c -o etherdogs_dbg
-	gdb etherdogs_dbg
+remove:
+	rm /usr/bin/etherdogs
+debug:
+	gcc -g -o etherdogs_dbg -lpcap main.c data.c ether.c ip.c udp.c tcp.c icmp.c

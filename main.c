@@ -15,7 +15,7 @@ This file is part of EtherDogs.
     GNU General Public License for more details.
 
     You should have received a copy of the GNU General Public License
-    along with EtherDogs.  If not, see <http://www.gnu.org/licenses/>.
+    along with EtherDogs. If not, see <http://www.gnu.org/licenses/>.
 */
 
 #include "common.h"
@@ -25,48 +25,70 @@ struct sockaddr_in source,dest;
 int tcp=0,udp=0,icmp=0,others=0,igmp=0,total=0,i,j;	
 
 int main(){
+	pcap_if_t *alldevsp , *device;
+	pcap_t *handle; //Handle of the device that shall be sniffed
 
-	int saddr_size , data_size;
-	struct sockaddr saddr;
-		
-	unsigned char *buffer = (unsigned char *) malloc(65536); //Its Big!
+	char errbuf[100] , *devname , devs[100][100];
+	int count = 1 , n;
+	
+	//First get the list of available devices
+	printf("Finding available devices ... ");
+	if( pcap_findalldevs( &alldevsp , errbuf) )
+	{
+		printf("Error finding devices : %s" , errbuf);
+		exit(1);
+	}
+	printf("Done");
+	
+	//Print the available devices
+	printf("\nAvailable Devices are :\n");
+	for(device = alldevsp ; device != NULL ; device = device->next)
+	{
+		printf("%d. %s - %s\n" , count , device->name , device->description);
+		if(device->name != NULL)
+		{
+			strcpy(devs[count] , device->name);
+		}
+		count++;
+	}
+	
+	//Ask user which device to sniff
+	printf("Enter the number of the device you want to sniff : ");
+	scanf("%d" , &n);
+	devname = devs[n];
+	
+	//Open the device for sniffing
+	printf("Opening device %s for sniffing ... " , devname);
+	handle = pcap_open_live(devname , 65536 , 1 , 0 , errbuf);
+	
+	if (handle == NULL) 
+	{
+		fprintf(stderr, "Couldn't open device %s : %s\n" , devname , errbuf);
+		exit(1);
+	}
+	printf("Done\n");
 	
 	dogslog=fopen("dogslog.txt","w");
-	if(dogslog==NULL) {
-		printf("Unable to create smpps.txt file.");
-		}
-    printf("\n\tEtherDogs Release 1.0 Beta\n\nCopyright (C) 2012-2013  Jose Maria Micoli\nThis program is free software: you can redistribute it and/or modify\nit under the terms of the GNU General Public License as published by\nthe Free Software Foundation, either version 3 of the License, or\n(at your option) any later version.\n\nThis program is distributed in the hope that it will be useful,\nbut WITHOUT ANY WARRANTY; without even the implied warranty of\nMERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\nGNU General Public License for more details.\n\nYou should have received a copy of the GNU General Public License\nalong with this program.  If not, see <http://www.gnu.org/licenses/>.\n\n");
-	printf("Starting capture...\n");
+	if(dogslog==NULL) 
+	{
+		printf("Unable to create file.");
+	}
 	
-	int sock_raw = socket( AF_PACKET , SOCK_RAW , htons(ETH_P_ALL)) ;
-	//setsockopt(sock_raw , SOL_SOCKET , SO_BINDTODEVICE , "eth0" , strlen("eth0")+ 1 );
+	//Put the device in sniff loop
+	pcap_loop(handle , -1 , process_packet , NULL);
 	
-	if(sock_raw < 0){
-		//Print the error with proper message
-		perror("Socket Error");
-		return 1;
-		}
-	while(1){
-		saddr_size = sizeof saddr;
-		//Receive a packet
-		data_size = recvfrom(sock_raw , buffer , 65536 , 0 , &saddr , (socklen_t*)&saddr_size);
-		if(data_size <0 ){
-			printf("Recvfrom error , failed to get packets\n");
-			return 1;
-			}
-		//Now process the packet
-		ProcessPacket(buffer , data_size);
-		}
-	close(sock_raw);
-	printf("Finished");
-	return 0;
+	return 0;	
 }
 
-void ProcessPacket(unsigned char* buffer, int size){
+void process_packet(u_char *args, const struct pcap_pkthdr *header, const u_char *buffer)
+{
+	int size = header->len;
+	
 	//Get the IP Header part of this packet , excluding the ethernet header
 	struct iphdr *iph = (struct iphdr*)(buffer + sizeof(struct ethhdr));
 	++total;
-	switch (iph->protocol){ //Check the Protocol and do accordingly...
+	switch (iph->protocol) //Check the Protocol and do accordingly...
+	{
 		case 1:  //ICMP Protocol
 			++icmp;
 			print_icmp_packet( buffer , size);
@@ -89,7 +111,6 @@ void ProcessPacket(unsigned char* buffer, int size){
 		default: //Some Other Protocol like ARP etc.
 			++others;
 			break;
-		}
+	}
 	printf("TCP : %d   UDP : %d   ICMP : %d   IGMP : %d   Others : %d   Total : %d\r", tcp , udp , icmp , igmp , others , total);
 }
-

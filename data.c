@@ -20,7 +20,7 @@ This file is part of EtherDogs.
 
 #include "common.h"
 
-void PrintData (unsigned char* data , int Size)
+void PrintData (const u_char * data , int Size)
 {
 	int i , j;
 	for(i=0 ; i < Size ; i++)
@@ -33,36 +33,36 @@ void PrintData (unsigned char* data , int Size)
 				if(data[j]>=32 && data[j]<=128)
 					fprintf(dogslog , "%c",(unsigned char)data[j]); //if its a number or alphabet
 				
-				else fprintf(dogslog, "."); //otherwise print a dot
+				else fprintf(dogslog , "."); //otherwise print a dot
 			}
-			fprintf(dogslog, "\n");
+			fprintf(dogslog , "\n");
 		} 
 		
-		if(i%16==0) fprintf(dogslog, "   ");
-			fprintf(dogslog, " %02X",(unsigned int)data[i]);
+		if(i%16==0) fprintf(dogslog , "   ");
+			fprintf(dogslog , " %02X",(unsigned int)data[i]);
 				
 		if( i==Size-1)  //print the last spaces
 		{
 			for(j=0;j<15-i%16;j++) 
 			{
-			  fprintf(dogslog, "   "); //extra spaces
+			  fprintf(dogslog , "   "); //extra spaces
 			}
 			
-			fprintf(dogslog, "         ");
+			fprintf(dogslog , "         ");
 			
 			for(j=i-i%16 ; j<=i ; j++)
 			{
 				if(data[j]>=32 && data[j]<=128) 
 				{
-				  fprintf(dogslog, "%c",(unsigned char)data[j]);
+				  fprintf(dogslog , "%c",(unsigned char)data[j]);
 				}
 				else 
 				{
-				  fprintf(dogslog, ".");
+				  fprintf(dogslog , ".");
 				}
 			}
 			
-			fprintf(dogslog,  "\n" );
+			fprintf(dogslog ,  "\n" );
 		}
 	}
 }

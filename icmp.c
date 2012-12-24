@@ -20,7 +20,7 @@ This file is part of EtherDogs.
 
 #include "common.h"
 
-void print_icmp_packet(unsigned char* Buffer , int Size)
+void print_icmp_packet(const u_char * Buffer , int Size)
 {
 	unsigned short iphdrlen;
 	
@@ -31,41 +31,40 @@ void print_icmp_packet(unsigned char* Buffer , int Size)
 	
 	int header_size =  sizeof(struct ethhdr) + iphdrlen + sizeof icmph;
 	
-	fprintf(dogslog, "\n\n***********************ICMP Packet*************************\n");	
+	fprintf(dogslog , "\n\n***********************ICMP Packet*************************\n");	
 	
 	print_ip_header(Buffer , Size);
 			
-	fprintf(dogslog, "\n");
+	fprintf(dogslog , "\n");
 		
-	fprintf(dogslog, "ICMP Header\n");
-	fprintf(dogslog, "   |-Type : %d",(unsigned int)(icmph->type));
+	fprintf(dogslog , "ICMP Header\n");
+	fprintf(dogslog , "   |-Type : %d",(unsigned int)(icmph->type));
 			
 	if((unsigned int)(icmph->type) == 11)
 	{
-		fprintf(dogslog, "  (TTL Expired)\n");
+		fprintf(dogslog , "  (TTL Expired)\n");
 	}
 	else if((unsigned int)(icmph->type) == ICMP_ECHOREPLY)
 	{
-		fprintf(dogslog, "  (ICMP Echo Reply)\n");
+		fprintf(dogslog , "  (ICMP Echo Reply)\n");
 	}
 	
-	fprintf(dogslog, "   |-Code : %d\n",(unsigned int)(icmph->code));
-	fprintf(dogslog, "   |-Checksum : %d\n",ntohs(icmph->checksum));
-	//fprintf(smppslog , "   |-ID       : %d\n",ntohs(icmph->id));
-	//fprintf(smppslog , "   |-Sequence : %d\n",ntohs(icmph->sequence));
+	fprintf(dogslog , "   |-Code : %d\n",(unsigned int)(icmph->code));
+	fprintf(dogslog , "   |-Checksum : %d\n",ntohs(icmph->checksum));
+	//fprintf(dogslog , "   |-ID       : %d\n",ntohs(icmph->id));
+	//fprintf(dogslog , "   |-Sequence : %d\n",ntohs(icmph->sequence));
 	fprintf(dogslog, "\n");
 
-	fprintf(dogslog, "IP Header\n");
+	fprintf(dogslog , "IP Header\n");
 	PrintData(Buffer,iphdrlen);
 		
-	fprintf(dogslog, "UDP Header\n");
+	fprintf(dogslog , "UDP Header\n");
 	PrintData(Buffer + iphdrlen , sizeof icmph);
 		
-	fprintf(dogslog, "Data Payload\n");	
+	fprintf(dogslog , "Data Payload\n");	
 	
 	//Move the pointer ahead and reduce the size of string
 	PrintData(Buffer + header_size , (Size - header_size) );
 	
-	fprintf(dogslog, "\n###########################################################");
+	fprintf(dogslog , "\n###########################################################");
 }
-

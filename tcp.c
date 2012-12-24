@@ -20,7 +20,7 @@ This file is part of EtherDogs.
 
 #include "common.h"
 
-void print_tcp_packet(unsigned char* Buffer, int Size)
+void print_tcp_packet(const u_char * Buffer, int Size)
 {
 	unsigned short iphdrlen;
 	
@@ -31,41 +31,40 @@ void print_tcp_packet(unsigned char* Buffer, int Size)
 			
 	int header_size =  sizeof(struct ethhdr) + iphdrlen + tcph->doff*4;
 	
-	fprintf(dogslog, "\n\n***********************TCP Packet*************************\n");	
+	fprintf(dogslog , "\n\n***********************TCP Packet*************************\n");	
 		
 	print_ip_header(Buffer,Size);
 		
-	fprintf(dogslog, "\n");
-	fprintf(dogslog, "TCP Header\n");
-	fprintf(dogslog, "   |-Source Port      : %u\n",ntohs(tcph->source));
-	fprintf(dogslog, "   |-Destination Port : %u\n",ntohs(tcph->dest));
-	fprintf(dogslog, "   |-Sequence Number    : %u\n",ntohl(tcph->seq));
-	fprintf(dogslog, "   |-Acknowledge Number : %u\n",ntohl(tcph->ack_seq));
+	fprintf(dogslog , "\n");
+	fprintf(dogslog , "TCP Header\n");
+	fprintf(dogslog , "   |-Source Port      : %u\n",ntohs(tcph->source));
+	fprintf(dogslog , "   |-Destination Port : %u\n",ntohs(tcph->dest));
+	fprintf(dogslog , "   |-Sequence Number    : %u\n",ntohl(tcph->seq));
+	fprintf(dogslog , "   |-Acknowledge Number : %u\n",ntohl(tcph->ack_seq));
 	fprintf(dogslog , "   |-Header Length      : %d DWORDS or %d BYTES\n" ,(unsigned int)tcph->doff,(unsigned int)tcph->doff*4);
-	//fprintf(dogslog, "   |-CWR Flag : %d\n",(unsigned int)tcph->cwr);
-	//fprintf(dogslog, "   |-ECN Flag : %d\n",(unsigned int)tcph->ece);
-	fprintf(dogslog, "   |-Urgent Flag          : %d\n",(unsigned int)tcph->urg);
-	fprintf(dogslog, "   |-Acknowledgement Flag : %d\n",(unsigned int)tcph->ack);
-	fprintf(dogslog, "   |-Push Flag            : %d\n",(unsigned int)tcph->psh);
-	fprintf(dogslog, "   |-Reset Flag           : %d\n",(unsigned int)tcph->rst);
-	fprintf(dogslog, "   |-Synchronise Flag     : %d\n",(unsigned int)tcph->syn);
-	fprintf(dogslog, "   |-Finish Flag          : %d\n",(unsigned int)tcph->fin);
-	fprintf(dogslog, "   |-Window         : %d\n",ntohs(tcph->window));
-	fprintf(dogslog, "   |-Checksum       : %d\n",ntohs(tcph->check));
-	fprintf(dogslog, "   |-Urgent Pointer : %d\n",tcph->urg_ptr);
-	fprintf(dogslog, "\n");
-	fprintf(dogslog, "                        DATA Dump                         ");
-	fprintf(dogslog, "\n");
+	//fprintf(dogslog , "   |-CWR Flag : %d\n",(unsigned int)tcph->cwr);
+	//fprintf(dogslog , "   |-ECN Flag : %d\n",(unsigned int)tcph->ece);
+	fprintf(dogslog , "   |-Urgent Flag          : %d\n",(unsigned int)tcph->urg);
+	fprintf(dogslog , "   |-Acknowledgement Flag : %d\n",(unsigned int)tcph->ack);
+	fprintf(dogslog , "   |-Push Flag            : %d\n",(unsigned int)tcph->psh);
+	fprintf(dogslog , "   |-Reset Flag           : %d\n",(unsigned int)tcph->rst);
+	fprintf(dogslog , "   |-Synchronise Flag     : %d\n",(unsigned int)tcph->syn);
+	fprintf(dogslog , "   |-Finish Flag          : %d\n",(unsigned int)tcph->fin);
+	fprintf(dogslog , "   |-Window         : %d\n",ntohs(tcph->window));
+	fprintf(dogslog , "   |-Checksum       : %d\n",ntohs(tcph->check));
+	fprintf(dogslog , "   |-Urgent Pointer : %d\n",tcph->urg_ptr);
+	fprintf(dogslog , "\n");
+	fprintf(dogslog , "                        DATA Dump                         ");
+	fprintf(dogslog , "\n");
 		
-	fprintf(dogslog, "IP Header\n");
+	fprintf(dogslog , "IP Header\n");
 	PrintData(Buffer,iphdrlen);
 		
-	fprintf(dogslog, "TCP Header\n");
+	fprintf(dogslog , "TCP Header\n");
 	PrintData(Buffer+iphdrlen,tcph->doff*4);
 		
-	fprintf(dogslog, "Data Payload\n");	
+	fprintf(dogslog , "Data Payload\n");	
 	PrintData(Buffer + header_size , Size - header_size );
 						
-	fprintf(dogslog, "\n###########################################################");
+	fprintf(dogslog , "\n###########################################################");
 }
-

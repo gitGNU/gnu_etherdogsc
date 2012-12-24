@@ -20,7 +20,7 @@ This file is part of EtherDogs.
 
 #include "common.h"
 
-void print_ip_header(unsigned char* Buffer, int Size)
+void print_ip_header(const u_char * Buffer, int Size)
 {
 	print_ethernet_header(Buffer , Size);
   
@@ -35,20 +35,19 @@ void print_ip_header(unsigned char* Buffer, int Size)
 	memset(&dest, 0, sizeof(dest));
 	dest.sin_addr.s_addr = iph->daddr;
 	
-	fprintf(dogslog, "\n");
-	fprintf(dogslog, "IP Header\n");
-	fprintf(dogslog, "   |-IP Version        : %d\n",(unsigned int)iph->version);
-	fprintf(dogslog, "   |-IP Header Length  : %d DWORDS or %d Bytes\n",(unsigned int)iph->ihl,((unsigned int)(iph->ihl))*4);
-	fprintf(dogslog, "   |-Type Of Service   : %d\n",(unsigned int)iph->tos);
-	fprintf(dogslog, "   |-IP Total Length   : %d  Bytes(Size of Packet)\n",ntohs(iph->tot_len));
-	fprintf(dogslog, "   |-Identification    : %d\n",ntohs(iph->id));
-	//fprintf(dogslog, "   |-Reserved ZERO Field   : %d\n",(unsigned int)iphdr->ip_reserved_zero);
-	//fprintf(dogslog, "   |-Dont Fragment Field   : %d\n",(unsigned int)iphdr->ip_dont_fragment);
-	//fprintf(dogslog, "   |-More Fragment Field   : %d\n",(unsigned int)iphdr->ip_more_fragment);
-	fprintf(dogslog, "   |-TTL      : %d\n",(unsigned int)iph->ttl);
-	fprintf(dogslog, "   |-Protocol : %d\n",(unsigned int)iph->protocol);
-	fprintf(dogslog, "   |-Checksum : %d\n",ntohs(iph->check));
-	fprintf(dogslog, "   |-Source IP        : %s\n",inet_ntoa(source.sin_addr));
-	fprintf(dogslog, "   |-Destination IP   : %s\n",inet_ntoa(dest.sin_addr));
+	fprintf(dogslog , "\n");
+	fprintf(dogslog , "IP Header\n");
+	fprintf(dogslog , "   |-IP Version        : %d\n",(unsigned int)iph->version);
+	fprintf(dogslog , "   |-IP Header Length  : %d DWORDS or %d Bytes\n",(unsigned int)iph->ihl,((unsigned int)(iph->ihl))*4);
+	fprintf(dogslog , "   |-Type Of Service   : %d\n",(unsigned int)iph->tos);
+	fprintf(dogslog , "   |-IP Total Length   : %d  Bytes(Size of Packet)\n",ntohs(iph->tot_len));
+	fprintf(dogslog , "   |-Identification    : %d\n",ntohs(iph->id));
+	//fprintf(dogslog , "   |-Reserved ZERO Field   : %d\n",(unsigned int)iphdr->ip_reserved_zero);
+	//fprintf(dogslog , "   |-Dont Fragment Field   : %d\n",(unsigned int)iphdr->ip_dont_fragment);
+	//fprintf(dogslog , "   |-More Fragment Field   : %d\n",(unsigned int)iphdr->ip_more_fragment);
+	fprintf(dogslog , "   |-TTL      : %d\n",(unsigned int)iph->ttl);
+	fprintf(dogslog , "   |-Protocol : %d\n",(unsigned int)iph->protocol);
+	fprintf(dogslog , "   |-Checksum : %d\n",ntohs(iph->check));
+	fprintf(dogslog , "   |-Source IP        : %s\n" , inet_ntoa(source.sin_addr) );
+	fprintf(dogslog , "   |-Destination IP   : %s\n" , inet_ntoa(dest.sin_addr) );
 }
-

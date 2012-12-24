@@ -20,13 +20,13 @@ This file is part of EtherDogs.
 
 #include "common.h"
 
-void print_ethernet_header(unsigned char* Buffer, int Size)
+void print_ethernet_header(const u_char *Buffer, int Size)
 {
 	struct ethhdr *eth = (struct ethhdr *)Buffer;
 	
-	fprintf(dogslog, "\n");
-	fprintf(dogslog, "Ethernet Header\n");
-	fprintf(dogslog, "   |-Destination Address : %.2X-%.2X-%.2X-%.2X-%.2X-%.2X \n", eth->h_dest[0] , eth->h_dest[1] , eth->h_dest[2] , eth->h_dest[3] , eth->h_dest[4] , eth->h_dest[5] );
-	fprintf(dogslog, "   |-Source Address      : %.2X-%.2X-%.2X-%.2X-%.2X-%.2X \n", eth->h_source[0] , eth->h_source[1] , eth->h_source[2] , eth->h_source[3] , eth->h_source[4] , eth->h_source[5] );
-	fprintf(dogslog, "   |-Protocol            : %u \n",(unsigned short)eth->h_proto);
+	fprintf(dogslog , "\n");
+	fprintf(dogslog , "Ethernet Header\n");
+	fprintf(dogslog , "   |-Destination Address : %.2X-%.2X-%.2X-%.2X-%.2X-%.2X \n", eth->h_dest[0] , eth->h_dest[1] , eth->h_dest[2] , eth->h_dest[3] , eth->h_dest[4] , eth->h_dest[5] );
+	fprintf(dogslog , "   |-Source Address      : %.2X-%.2X-%.2X-%.2X-%.2X-%.2X \n", eth->h_source[0] , eth->h_source[1] , eth->h_source[2] , eth->h_source[3] , eth->h_source[4] , eth->h_source[5] );
+	fprintf(dogslog , "   |-Protocol            : %u \n",(unsigned short)eth->h_proto);
 }

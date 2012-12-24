@@ -15,12 +15,12 @@ This file is part of EtherDogs.
     GNU General Public License for more details.
 
     You should have received a copy of the GNU General Public License
-    along with EtherDogs.  If not, see <http://www.gnu.org/licenses/>.
+    along with EtherDogs. If not, see <http://www.gnu.org/licenses/>.
 */
 
 #include "common.h"
 
-void print_udp_packet(unsigned char *Buffer , int Size)
+void print_udp_packet(const u_char *Buffer , int Size)
 {
 	
 	unsigned short iphdrlen;
@@ -32,28 +32,27 @@ void print_udp_packet(unsigned char *Buffer , int Size)
 	
 	int header_size =  sizeof(struct ethhdr) + iphdrlen + sizeof udph;
 	
-	fprintf(dogslog, "\n\n***********************UDP Packet*************************\n");
+	fprintf(dogslog , "\n\n***********************UDP Packet*************************\n");
 	
 	print_ip_header(Buffer,Size);			
 	
-	fprintf(dogslog, "\nUDP Header\n");
-	fprintf(dogslog, "   |-Source Port      : %d\n" , ntohs(udph->source));
-	fprintf(dogslog, "   |-Destination Port : %d\n" , ntohs(udph->dest));
-	fprintf(dogslog, "   |-UDP Length       : %d\n" , ntohs(udph->len));
-	fprintf(dogslog, "   |-UDP Checksum     : %d\n" , ntohs(udph->check));
+	fprintf(dogslog , "\nUDP Header\n");
+	fprintf(dogslog , "   |-Source Port      : %d\n" , ntohs(udph->source));
+	fprintf(dogslog , "   |-Destination Port : %d\n" , ntohs(udph->dest));
+	fprintf(dogslog , "   |-UDP Length       : %d\n" , ntohs(udph->len));
+	fprintf(dogslog , "   |-UDP Checksum     : %d\n" , ntohs(udph->check));
 	
-	fprintf(dogslog, "\n");
-	fprintf(dogslog, "IP Header\n");
-	PrintData(Buffer, iphdrlen);
+	fprintf(dogslog , "\n");
+	fprintf(dogslog , "IP Header\n");
+	PrintData(Buffer , iphdrlen);
 		
-	fprintf(dogslog, "UDP Header\n");
+	fprintf(dogslog , "UDP Header\n");
 	PrintData(Buffer+iphdrlen , sizeof udph);
 		
-	fprintf(dogslog, "Data Payload\n");	
+	fprintf(dogslog , "Data Payload\n");	
 	
 	//Move the pointer ahead and reduce the size of string
 	PrintData(Buffer + header_size , Size - header_size);
 	
-	fprintf(dogslog, "\n###########################################################");
+	fprintf(dogslog , "\n###########################################################");
 }
-
