@@ -21,19 +21,17 @@ This file is part of EtherDogs.
 #ifndef __common_h
 #define __common_h
 
-#include<stdio.h>		
-#include<stdlib.h>
-#include<string.h>
-#include<arpa/inet.h>
-#include<net/ethernet.h>
-#include<netinet/ip_icmp.h>
-#include<netinet/udp.h>
-#include<netinet/tcp.h>
-#include<netinet/ip.h>
-#include<sys/socket.h>
-#include<sys/types.h>
-#include<pcap.h>
-#include<errno.h>
+#include<pcap.h>            //for use libpcap functions
+#include<stdio.h>           //for all thinks
+#include<stdlib.h>          // for exit()
+#include<string.h>          //for memset
+#include<sys/socket.h>      //for bsd sockets
+#include<arpa/inet.h>       // for inet_ntoa()
+#include<net/ethernet.h>    //for ethernet header
+#include<netinet/ip_icmp.h> //Provides declarations for icmp header
+#include<netinet/udp.h>	    //Provides declarations for udp header
+#include<netinet/tcp.h>	    //Provides declarations for tcp header
+#include<netinet/ip.h>	    //Provides declarations for ip header
 
 /*function prototipes*/
 void process_packet(u_char *, const struct pcap_pkthdr *, const u_char *);
