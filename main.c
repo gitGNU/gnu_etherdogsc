@@ -32,14 +32,19 @@ int main(){
 	int count = 1 , n;
 	
 	//First get the list of available devices
-	printf("Finding available devices ... ");
-	if( pcap_findalldevs( &alldevsp , errbuf) )
+	printf("Finding available devices ... \n");
+	if(pcap_findalldevs( &alldevsp , errbuf))
 	{
 		printf("Error finding devices : %s" , errbuf);
 		exit(1);
 	}
+	if(alldevsp == NULL)
+	{
+		printf("\nNo Devices were found ! ...\nMaybe run as 'sudo ./etherdogs'?\n");
+		exit(1);
+	}
+		
 	printf("Done");
-	
 	//Print the available devices
 	printf("\nAvailable Devices are :\n");
 	for(device = alldevsp ; device != NULL ; device = device->next)
