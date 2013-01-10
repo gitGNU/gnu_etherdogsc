@@ -19,8 +19,8 @@
 
 
 etherdogs:main.c data.c ether.c ip.c udp.c tcp.c icmp.c help.c
-	gcc -c  main.c data.c ether.c ip.c udp.c tcp.c icmp.c help.c -lpcap
-	gcc -o etherdogs  main.o data.o ether.o ip.o udp.o tcp.o icmp.o help.o -lpcap
+	gcc -c  main.c data.c ether.c ip.c udp.c tcp.c icmp.c help.c proto.c -lpcap
+	gcc -o etherdogs  main.o data.o ether.o ip.o udp.o tcp.o icmp.o help.o proto.o -lpcap
 clean:
 	rm *.o
 	rm etherdogs
@@ -29,4 +29,4 @@ install:
 remove:
 	rm /usr/bin/etherdogs
 debug:
-	gcc -g -o etherdogs_dbg main.c data.c ether.c ip.c udp.c tcp.c icmp.c help.c -lpcap
+	gcc -g -o etherdogs_dbg main.c data.c ether.c ip.c udp.c tcp.c icmp.c help.c proto.c -lpcap

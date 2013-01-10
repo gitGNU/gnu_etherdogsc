@@ -33,6 +33,11 @@ This file is part of EtherDogs.
 #include<netinet/tcp.h>	    //Provides declarations for tcp header
 #include<netinet/ip.h>	    //Provides declarations for ip header
 
+#define ICMP 1
+#define UDP  17
+#define IGMP 2
+#define TCP  6
+
 /*function prototipes*/
 void process_packet(u_char *, const struct pcap_pkthdr *, const u_char *);
 void process_ip_packet(const u_char *, int);
@@ -41,11 +46,14 @@ void print_tcp_packet(const u_char *, int);
 void print_udp_packet(const u_char *, int);
 void print_icmp_packet(const u_char *, int);
 void printData(const u_char *, int);
+void process_proto(const u_char *, const u_char *);
+void process_proto_packet(u_char *, const struct pcap_pkthdr *,const u_char *);
+
 int main();
 
 /*global var, const and struct declarations (only extern)*/
 extern FILE *dogslog;
 extern struct sockaddr_in source, dest;
-extern int tcp, udp, icmp, others, igmp, total, i, j;
+extern int tcp, udp, icmp, others, igmp, total,common, i,proto,j;
 
 #endif /*__common_h*/
