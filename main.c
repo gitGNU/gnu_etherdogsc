@@ -24,27 +24,51 @@ FILE *dogslog;
 struct sockaddr_in source,dest;
 int tcp=0,udp=0,icmp=0,others=0,igmp=0,total=0,i,j;	
 
-int main(){
+int main(int argc, char **argv){
 	pcap_if_t *alldevsp , *device;
 	pcap_t *handle; //Handle of the device that shall be sniffed
 
 	char errbuf[100] , *devname , devs[100][100];
 	int count = 1 , n;
+//Get the device name as parameter with "-d" option
+	if(argc == 2){
+		if(strcmp("-h", argv[1]) == 0){
+			helpModule();
+			return 0;
+			}
+		
+		else{
+			printf("invalid parameter\n");
+			return 0;
+			}
+		}
+
+	if(argc == 3){
 	
+		if (strcmp("-d",argv[1]) == 0){
+			devname=argv[2];
+			goto open;
+		}	
+		else {
+			printf("invalid parameter\n");
+			return 0;
+		}
+
+	}else if(argc != 3 && argc != 1){
+		
+		printf("invalid parameter\n");
+		return 0;
+	
+	}
 	//First get the list of available devices
-	printf("Finding available devices ... \n");
-	if(pcap_findalldevs( &alldevsp , errbuf))
+	printf("Finding available devices ... ");
+	if( pcap_findalldevs( &alldevsp , errbuf) )
 	{
 		printf("Error finding devices : %s" , errbuf);
 		exit(1);
 	}
-	if(alldevsp == NULL)
-	{
-		printf("\nNo Devices were found ! ...\nMaybe run as 'sudo ./etherdogs'?\n");
-		exit(1);
-	}
-		
 	printf("Done");
+	
 	//Print the available devices
 	printf("\nAvailable Devices are :\n");
 	for(device = alldevsp ; device != NULL ; device = device->next)
@@ -61,7 +85,8 @@ int main(){
 	printf("Enter the number of the device you want to sniff : ");
 	scanf("%d" , &n);
 	devname = devs[n];
-	
+
+open:	
 	//Open the device for sniffing
 	printf("Opening device %s for sniffing ... " , devname);
 	handle = pcap_open_live(devname , 65536 , 1 , 0 , errbuf);
