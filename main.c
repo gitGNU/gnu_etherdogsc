@@ -23,14 +23,15 @@ This file is part of EtherDogs.
 FILE *dogslog;
 struct sockaddr_in source,dest;
 int tcp=0,udp=0,icmp=0,others=0,igmp=0,total=0,i,j;	
-
+int proto = 0;
 int main(int argc, char **argv){
 	pcap_if_t *alldevsp , *device;
 	pcap_t *handle; //Handle of the device that shall be sniffed
 
 	char errbuf[100] , *devname , devs[100][100];
+	u_char *filter;
 	int count = 1 , n;
-//Get the device name as parameter with "-d" option
+
 	if(argc == 2){
 		if(strcmp("-h", argv[1]) == 0){
 			helpModule();
@@ -43,18 +44,35 @@ int main(int argc, char **argv){
 			}
 		}
 
+//Get the device name as parameter with "-d" option
 	if(argc == 3){
 	
 		if (strcmp("-d",argv[1]) == 0){
 			devname=argv[2];
 			goto open;
-		}	
+		}
+		
 		else {
 			printf("invalid parameter\n");
 			return 0;
 		}
 
-	}else if(argc != 3 && argc != 1){
+	}
+	if(argc == 5){
+		proto = 1;
+		if(strcmp("-d",argv[1])==0){
+			devname=argv[2];
+			goto open;	
+		}	
+		else {
+			printf("Invalid Parameter\n");
+			return 0;		
+		     }	
+	}
+	
+	
+	
+	else if(argc != 3 && argc != 1 && argc != 5){
 		
 		printf("invalid parameter\n");
 		return 0;
@@ -86,30 +104,49 @@ int main(int argc, char **argv){
 	scanf("%d" , &n);
 	devname = devs[n];
 
-open:	
-	//Open the device for sniffing
-	printf("Opening device %s for sniffing ... " , devname);
-	handle = pcap_open_live(devname , 65536 , 1 , 0 , errbuf);
-	
-	if (handle == NULL) 
+open:
+	/* Using flag -p to select protocol  */
+	if(proto == 1)		
 	{
-		fprintf(stderr, "Couldn't open device %s : %s\n" , devname , errbuf);
-		exit(1);
-	}
-	printf("Done\n");
-	
-	dogslog=fopen("dogslog.txt","w");
-	if(dogslog==NULL) 
-	{
-		printf("Unable to create file.");
-	}
-	
-	//Put the device in sniff loop
-	pcap_loop(handle , -1 , process_packet , NULL);
-	
-	return 0;	
-}
+		if(strcmp("-p",argv[3]) == 0){
+			filter = argv[4];
+			printf("Capturing %s packets....\n",filter);
+			devname = argv[2];	
+			proto_capture(devname,filter);	
+		}
 
+		else{
+		       	printf("Invalid Parameters : Check Usage with 'etherdogs -h'");
+		    }	
+	}
+	
+	else
+
+	{
+	
+		//Open the device for sniffing
+		printf("Opening device %s for sniffing ... " , devname);
+		handle = pcap_open_live(devname , 65536 , 1 , 0 , errbuf);
+		
+		if (handle == NULL) 
+		{
+			fprintf(stderr, "Couldn't open device %s : %s\n" , devname , errbuf);
+			exit(1);
+		}
+		printf("Done\n");
+		
+		dogslog=fopen("dogslog.txt","w");
+		if(dogslog==NULL) 
+		{
+			printf("Unable to create file.");
+		}
+		
+		//Put the device in sniff loop
+		pcap_loop(handle , -1 , process_packet , NULL);
+		
+		return 0;	
+	}
+}	
 void process_packet(u_char *args, const struct pcap_pkthdr *header, const u_char *buffer)
 {
 	int size = header->len;
