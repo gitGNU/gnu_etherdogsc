@@ -53,24 +53,24 @@ void process_proto_packet(u_char *args, const struct pcap_pkthdr *header,const u
 	int size = header->len;
 	 //Check the Protocol and do accordingly...
 	
-		if(strcmp(args,"ICMP")==0){ //ICMP Protocol
+		if((strcmp(args,"ICMP") && strcmp(args,"icmp"))==0){ //ICMP Protocol
 			++icmp;
 			++common;
 			print_icmp_packet( buffer , size);
 		}
 		
-		else if(strcmp(args,"IGMP")==0){  //IGMP Protocol
+		else if((strcmp(args,"IGMP") && strcmp(args,"igmp"))==0){  //IGMP Protocol
 			++igmp;
 			++common;
 		}
 		
-		else if(strcmp(args,"TCP")==0){  //TCP Protocol
+		else if((strcmp(args,"TCP") && strcmp(args,"tcp"))==0){  //TCP Protocol
 			++tcp;
 			++common;
 			print_tcp_packet(buffer , size);
 		}
 		
-		else if(strcmp(args,"UDP")==0){ //UDP Protocol
+		else if((strcmp(args,"UDP") && strcmp(args,"udp"))==0){ //UDP Protocol
 			++udp;
 			++common;
 			print_udp_packet(buffer , size);
