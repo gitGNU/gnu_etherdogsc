@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /*
 <EtherDogs is a Simple Multi Protocol Packet Sniffer>
 Copyright © <2012-2013> <Jose Maria Micoli>
@@ -19,8 +18,6 @@ This file is part of EtherDogs.
     along with EtherDogs. If not, see <http://www.gnu.org/licenses/>.
 */
 
-=======
->>>>>>> 114a02343ef0685ef0b567abef7536b6e30bc8b4
 #include "common.h"
 
 int common = 0; 

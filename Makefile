@@ -18,11 +18,8 @@
 #    along with EtherDogs. If not, see <http://www.gnu.org/licenses/>.
 
 
-<<<<<<< HEAD
 etherdogs:main.c data.c ether.c ip.c udp.c tcp.c icmp.c help.c proto.c
-=======
 etherdogs:main.c data.c ether.c ip.c udp.c tcp.c icmp.c help.c
->>>>>>> 114a02343ef0685ef0b567abef7536b6e30bc8b4
 	gcc -c  main.c data.c ether.c ip.c udp.c tcp.c icmp.c help.c proto.c -lpcap
 	gcc -o etherdogs  main.o data.o ether.o ip.o udp.o tcp.o icmp.o help.o proto.o -lpcap
 clean:
