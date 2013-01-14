@@ -1,6 +1,6 @@
 /*
 <EtherDogs is a Simple Multi Protocol Packet Sniffer>
-Copyright © <2012-2013> <Jose Maria Micoli>
+Copyright © <2012-2013> <EtherDogs Development Team>
 
 This file is part of EtherDogs.
 
