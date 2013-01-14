@@ -23,107 +23,107 @@ This file is part of EtherDogs.
 FILE *dogslog;
 struct sockaddr_in source,dest;
 int tcp=0,udp=0,icmp=0,others=0,igmp=0,total=0,i,j;	
-int proto = 0;
-int main(int argc, char **argv){
+int proto_flag = 0, dev_flag = 0;
+
+int main(int argc, char ** argv)
+{
 	pcap_if_t *alldevsp , *device;
 	pcap_t *handle; //Handle of the device that shall be sniffed
 
 	char errbuf[100] , *devname , devs[100][100];
 	u_char *filter;
-	int count = 1 , n;
+	int count = 1 , n,command_opt;
+	
 
-	if(argc == 2){
-		if(strcmp("-h", argv[1]) == 0){
-			helpModule();
-			return 0;
-			}
-		
-		else{
-			printf("invalid parameter\n");
-			return 0;
-			}
-		}
+	//allocate memory for devname and filter
+	
+	devname = (char *)malloc(20*sizeof(char));
+	filter = (u_char *)malloc(20*sizeof(u_char));
+	
 
-//Get the device name as parameter with "-d" option
-	if(argc == 3){
 	
-		if (strcmp("-d",argv[1]) == 0){
-			devname=argv[2];
-			goto open;
-		}
-		
-		else {
-			printf("invalid parameter\n");
-			return 0;
-		}
-
-	}
-	if(argc == 5){
-		proto = 1;
-		if(strcmp("-d",argv[1])==0){
-			devname=argv[2];
-			goto open;	
-		}	
-		else {
-			printf("Invalid Parameter\n");
-			return 0;		
-		     }	
-	}
-	
-	
-	
-	else if(argc != 3 && argc != 1 && argc != 5){
-		
-		printf("invalid parameter\n");
-		return 0;
-	
-	}
-	//First get the list of available devices
-	printf("Finding available devices ... ");
-	if( pcap_findalldevs( &alldevsp , errbuf) )
+	if(argc>=2)
 	{
-		printf("Error finding devices : %s" , errbuf);
-		exit(1);
-	}
-	printf("Done");
-	
-	//Print the available devices
-	printf("\nAvailable Devices are :\n");
-	for(device = alldevsp ; device != NULL ; device = device->next)
-	{
-		printf("%d. %s - %s\n" , count , device->name , device->description);
-		if(device->name != NULL)
+		while((command_opt=getopt(argc,argv,"hd:p:n:"))!=-1)
 		{
-			strcpy(devs[count] , device->name);
+			
+
+			switch(command_opt)
+			{
+				case 'h':
+					helpModule();
+					exit(2);	
+					break;
+				case 'd':
+					dev_flag = 1;
+					strcpy(devname,optarg); 
+					break;
+				case 'p':
+					proto_flag = 1;
+					strcpy(filter,optarg);
+					break;
+				case 'n':
+					n = atoi(optarg);
+					break;
+				case '?':
+					break;
+				
+				default :printf("getopt returned code : %c ",command_opt);
+		
+			}
 		}
-		count++;
+
 	}
+
+	if(optind < argc)
+	{
+		printf("Invalid Options : ");
+		while(optind<argc)
+			printf("%s ",argv[optind++]);
+		printf("\n");
+		printf("Use etherdogs -h for help \n");
+	}
+
+	if((argc==1) || !dev_flag)
+	{
+		//First get the list of available devices
+		printf("Finding available devices ... ");
+		if( pcap_findalldevs( &alldevsp , errbuf) )
+		{
+			printf("Error finding devices : %s" , errbuf);
+			exit(1);
+		}
+		printf("Done");
+		
+		//Print the available devices
+		printf("\nAvailable Devices are :\n");
+			for(device = alldevsp ; device != NULL ; device = device->next)
+		{	
+			printf("%d. %s - %s\n" , count , device->name , device->description);
+			if(device->name != NULL)
+			{
+				strcpy(devs[count] , device->name);
+			}
+			count++;
+		}
 	
 	//Ask user which device to sniff
 	printf("Enter the number of the device you want to sniff : ");
 	scanf("%d" , &n);
 	devname = devs[n];
 
-open:
-	/* Using flag -p to select protocol  */
-	if(proto == 1)		
-	{
-		if(strcmp("-p",argv[3]) == 0){
-			filter = argv[4];
-			printf("Capturing %s packets....\n",filter);
-			devname = argv[2];	
-			proto_capture(devname,filter);	
-		}
 
-		else{
-		       	printf("Invalid Parameters : Check Usage with 'etherdogs -h'");
-		    }	
+	}
+
+
+	if(proto_flag == 1)
+	{
+		proto_capture(devname,filter);
+		return 0;
 	}
 	
-	else
-
+	else 
 	{
-	
 		//Open the device for sniffing
 		printf("Opening device %s for sniffing ... " , devname);
 		handle = pcap_open_live(devname , 65536 , 1 , 0 , errbuf);
@@ -139,13 +139,16 @@ open:
 		if(dogslog==NULL) 
 		{
 			printf("Unable to create file.");
-		}
+		}		
+			//Put the device in sniff loop
+			pcap_loop(handle , -1 , process_packet , NULL);
+			
+			return 0;
 		
-		//Put the device in sniff loop
-		pcap_loop(handle , -1 , process_packet , NULL);
-		
-		return 0;	
-	}
+	}	
+
+
+	
 }	
 void process_packet(u_char *args, const struct pcap_pkthdr *header, const u_char *buffer)
 {

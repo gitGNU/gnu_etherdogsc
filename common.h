@@ -21,17 +21,18 @@ This file is part of EtherDogs.
 #ifndef __common_h
 #define __common_h
 
-#include<pcap.h>            //for use libpcap functions
-#include<stdio.h>           //for all thinks
-#include<stdlib.h>          // for exit()
-#include<string.h>          //for memset
-#include<sys/socket.h>      //for bsd sockets
-#include<arpa/inet.h>       // for inet_ntoa()
-#include<net/ethernet.h>    //for ethernet header
-#include<netinet/ip_icmp.h> //Provides declarations for icmp header
-#include<netinet/udp.h>	    //Provides declarations for udp header
-#include<netinet/tcp.h>	    //Provides declarations for tcp header
-#include<netinet/ip.h>	    //Provides declarations for ip header
+#include <pcap.h>            //for use libpcap functions
+#include <stdio.h>           //for all thinks
+#include <stdlib.h>	   // for exit()
+#include <unistd.h>		          
+#include <string.h>          //for memset
+#include <sys/socket.h>      //for bsd sockets
+#include <arpa/inet.h>       // for inet_ntoa()
+#include <net/ethernet.h>    //for ethernet header
+#include <netinet/ip_icmp.h> //Provides declarations for icmp header
+#include <netinet/udp.h>	    //Provides declarations for udp header
+#include <netinet/tcp.h>	    //Provides declarations for tcp header
+#include <netinet/ip.h>	    //Provides declarations for ip header
 
 #define ICMP 1
 #define UDP  17
@@ -54,6 +55,6 @@ int main();
 /*global var, const and struct declarations (only extern)*/
 extern FILE *dogslog;
 extern struct sockaddr_in source, dest;
-extern int tcp, udp, icmp, others, igmp, total,common, i,proto,j;
+extern int tcp, udp, icmp, others, igmp, total,common, i,proto_flag,dev_flag,j;
 
 #endif /*__common_h*/
