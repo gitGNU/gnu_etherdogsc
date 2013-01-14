@@ -82,6 +82,7 @@ int main(int argc, char ** argv)
 			printf("%s ",argv[optind++]);
 		printf("\n");
 		printf("Use etherdogs -h for help \n");
+		return 0;
 	}
 
 	if((argc==1) || !dev_flag)
@@ -125,12 +126,12 @@ int main(int argc, char ** argv)
 	else 
 	{
 		//Open the device for sniffing
-		printf("Opening device %s for sniffing ... " , devname);
+		printf("Opening device '%s' for sniffing ... " , devname);
 		handle = pcap_open_live(devname , 65536 , 1 , 0 , errbuf);
 		
 		if (handle == NULL) 
 		{
-			fprintf(stderr, "Couldn't open device %s : %s\n" , devname , errbuf);
+			fprintf(stderr, "Couldn't open device '%s' : %s\n" , devname , errbuf);
 			exit(1);
 		}
 		printf("Done\n");
