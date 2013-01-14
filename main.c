@@ -32,7 +32,7 @@ int main(int argc, char ** argv)
 
 	char errbuf[100] , *devname , devs[100][100];
 	u_char *filter;
-	int count = 1 , n,command_opt;
+	int count = 1 , n=-1,command_opt;
 	
 
 	//allocate memory for devname and filter
@@ -74,7 +74,6 @@ int main(int argc, char ** argv)
 		}
 
 	}
-
 	if(optind < argc)
 	{
 		printf("Invalid Options : ");
@@ -142,8 +141,8 @@ int main(int argc, char ** argv)
 			printf("Unable to create file.");
 		}		
 			//Put the device in sniff loop
-			pcap_loop(handle , -1 , process_packet , NULL);
-			
+			pcap_loop(handle , n , process_packet , NULL);
+			printf("\n");
 			return 0;
 		
 	}	
@@ -184,4 +183,5 @@ void process_packet(u_char *args, const struct pcap_pkthdr *header, const u_char
 			break;
 	}
 	printf("TCP : %d   UDP : %d   ICMP : %d   IGMP : %d   Others : %d   Total : %d\r", tcp , udp , icmp , igmp , others , total);
+
 }
