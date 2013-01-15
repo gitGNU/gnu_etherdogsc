@@ -44,12 +44,16 @@ int main(int argc, char ** argv)
 	
 	if(argc>=2)
 	{
-		while((command_opt=getopt(argc,argv,"hd:p:n:"))!=-1)
+		while((command_opt=getopt(argc,argv,"hld:p:n:"))!=-1)
 		{
 			
 
 			switch(command_opt)
 			{
+				case 'l':
+					listDevice();
+					exit(2);
+					break;
 				case 'h':
 					helpModule();
 					exit(2);	
@@ -74,45 +78,22 @@ int main(int argc, char ** argv)
 		}
 
 	}
+
 	if(optind < argc)
 	{
 		printf("Invalid Options : ");
 		while(optind<argc)
 			printf("%s ",argv[optind++]);
 		printf("\n");
-		printf("Use etherdogs -h for help \n");
+		printf("Use etherdogs -h for help or etherdogs -l to list the all available devices \n");
 		return 0;
 	}
 
 	if((argc==1) || !dev_flag)
 	{
-		//First get the list of available devices
-		printf("Finding available devices ... ");
-		if( pcap_findalldevs( &alldevsp , errbuf) )
-		{
-			printf("Error finding devices : %s" , errbuf);
-			exit(1);
-		}
-		printf("Done");
-		
-		//Print the available devices
-		printf("\nAvailable Devices are :\n");
-			for(device = alldevsp ; device != NULL ; device = device->next)
-		{	
-			printf("%d. %s - %s\n" , count , device->name , device->description);
-			if(device->name != NULL)
-			{
-				strcpy(devs[count] , device->name);
-			}
-			count++;
-		}
-	
-	//Ask user which device to sniff
-	printf("Enter the number of the device you want to sniff : ");
-	scanf("%d" , &n);
-	devname = devs[n];
-
-
+		printf("Usage: etherdogs -d <device> -p <protocol> -n <max number of packets>\n");
+		printf("Use etherdogs -h for help or etherdogs -l to list the all available devices\n");
+		return 1;	
 	}
 
 
@@ -183,5 +164,37 @@ void process_packet(u_char *args, const struct pcap_pkthdr *header, const u_char
 			break;
 	}
 	printf("TCP : %d   UDP : %d   ICMP : %d   IGMP : %d   Others : %d   Total : %d\r", tcp , udp , icmp , igmp , others , total);
+
+}
+
+void listDevice(void)
+{
+	pcap_if_t *alldevsp , *device;
+	pcap_t *handle; //Handle of the device that shall be sniffed
+	int count = 1;
+
+
+	char errbuf[100] , *devname , devs[100][100];
+	//First get the list of available devices
+	//printf("Finding available devices ... ");
+	if( pcap_findalldevs( &alldevsp , errbuf) )
+	{
+		printf("Error finding devices : %s" , errbuf);
+		exit(1);
+	}
+	printf("Done");
+
+	//Print the available devices
+	//printf("\nAvailable Devices are :\n");
+
+	for(device = alldevsp ; device != NULL ; device = device->next)
+	{	
+		printf("%d. %s - %s\n" , count , device->name , device->description);
+		if(device->name != NULL)
+		{
+			strcpy(devs[count] , device->name);
+		}
+		count++;
+	}
 
 }

@@ -26,9 +26,10 @@ void helpModule(void)
 	printf("\nWelcome to the EtherDogs\nEtherDogs is a simple multi protocol packet sniffer\n");
 	printf("EtherDogs is a Free Software\n");
 	printf("\nThis is the help module\n\n");
-	printf("\nusage: etherdogs -'' <parameters>\nexample: etherdogs -h //for help\n\tetherdogs -d <device> -p <filter>\n");
-	printf("or for simple run the ether dogs usage is: etherdogs //To list every available network interfaces\n");
+	printf("\nUsage: etherdogs -d <device> -p <protocol> -n <max number of packets\n>");
+	printf("Or use etherdogs -h for Help or etherdogs -l to list all available devices\n");
 	printf("\nList of any arguments:\n");
+	printf("\t-l For list all available Device\n");
 	printf("\t-h For help\n");
 	printf("\t-d For select the device\n");
 	printf("\t-p For filter captured packets\n");
