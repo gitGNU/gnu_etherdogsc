@@ -36,3 +36,35 @@ void helpModule(void)
 	printf("\t-n For max number of packet to capture\n\n");
 	
 }
+
+void listDevice(void)
+{
+	pcap_if_t *alldevsp , *device;
+	pcap_t *handle; //Handle of the device that shall be sniffed
+	int count = 1;
+
+
+	char errbuf[100] , *devname , devs[100][100];
+	//First get the list of available devices
+	//printf("Finding available devices ... ");
+	if( pcap_findalldevs( &alldevsp , errbuf) )
+	{
+		printf("Error finding devices : %s" , errbuf);
+		exit(1);
+	}
+	printf("Done");
+
+	//Print the available devices
+	//printf("\nAvailable Devices are :\n");
+
+	for(device = alldevsp ; device != NULL ; device = device->next)
+	{	
+		printf("%d. %s - %s\n" , count , device->name , device->description);
+		if(device->name != NULL)
+		{
+			strcpy(devs[count] , device->name);
+		}
+		count++;
+	}
+
+}
