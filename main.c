@@ -89,17 +89,19 @@ int main(int argc, char ** argv)
 		return 0;
 	}
 
-	if((argc==1) || !dev_flag)
+	if((argc==1) || !dev_flag) //if no option was specified or device was not set
 	{
-		printf("Usage: etherdogs -d <device> -p <protocol> -n <max number of packets>\n");
-		printf("Use etherdogs -h for help or etherdogs -l to list the all available devices\n");
-		return 1;	
+		printf("Use etherdogs -d <device> to chose a device\n");
+		printf("Opening the default device ....\n\n");
+
+		devname = "any"; // set device to default
+		
 	}
 
 
 	if(proto_flag == 1)
 	{
-		proto_capture(devname,filter);
+		proto_capture(devname,filter,n);
 		return 0;
 	}
 	

@@ -1,0 +1,800 @@
+
+
+***********************TCP Packet*************************
+
+Ethernet Header
+   |-Destination Address : 00-00-00-01-00-06 
+   |-Source Address      : 94-44-52-0C-71-73 
+   |-Protocol            : 0 
+
+IP Header
+   |-IP Version        : 0
+   |-IP Header Length  : 8 DWORDS or 32 Bytes
+   |-Type Of Service   : 0
+   |-IP Total Length   : 17696  Bytes(Size of Packet)
+   |-Identification    : 109
+   |-TTL      : 0
+   |-Protocol : 0
+   |-Checksum : 14086
+   |-Source IP        : 154.204.173.194
+   |-Destination IP   : 36.54.192.168
+
+TCP Header
+   |-Source Port      : 24794
+   |-Destination Port : 32792
+   |-Sequence Number    : 65686482
+   |-Acknowledge Number : 257
+   |-Header Length      : 0 DWORDS or 0 BYTES
+   |-Urgent Flag          : 0
+   |-Acknowledgement Flag : 0
+   |-Push Flag            : 1
+   |-Reset Flag           : 0
+   |-Synchronise Flag     : 1
+   |-Finish Flag          : 0
+   |-Window         : 38146
+   |-Checksum       : 20648
+   |-Urgent Pointer : 23296
+
+                        DATA Dump                         
+IP Header
+    00 00 00 01 00 06 94 44 52 0C 71 73 00 00 08 00         .......DR.qs....
+    45 20 00 6D 53 F7 00 00 37 06 9A CC AD C2 24 36         E .mS...7.....$6
+TCP Header
+Data Payload
+    60 DA 80 18 03 EA 4B D2 00 00 01 01 08 0A 95 02         `.€...K.........
+    50 A8 00 5B 03 29 17 03 02 00 34 88 DA C9 9C A0         P..[.)....4.....
+    0F 75 BA 6F 0E A9 18 08 9B F6 6B 00 41 1F 30 67         .u.o......k.A.0g
+    A7 2F EA 64 B0 CA 06 5F BB C8 3E 92 E7 8E 1C EE         ./.d..._..>.....
+    6B 92 2E 3E 48 4C FD 70 C2 3F 19 4C A6 09 FD            k..>HL.p.?.L...
+
+###########################################################
+
+***********************TCP Packet*************************
+
+Ethernet Header
+   |-Destination Address : 00-04-00-01-00-06 
+   |-Source Address      : CC-AF-78-C0-1E-BD 
+   |-Protocol            : 0 
+
+IP Header
+   |-IP Version        : 0
+   |-IP Header Length  : 8 DWORDS or 32 Bytes
+   |-Type Of Service   : 0
+   |-IP Total Length   : 17664  Bytes(Size of Packet)
+   |-Identification    : 52
+   |-TTL      : 64
+   |-Protocol : 0
+   |-Checksum : 16390
+   |-Source IP        : 68.201.192.168
+   |-Destination IP   : 2.7.173.194
+
+TCP Header
+   |-Source Port      : 24137
+   |-Destination Port : 32784
+   |-Sequence Number    : 103453902
+   |-Acknowledge Number : 257
+   |-Header Length      : 0 DWORDS or 0 BYTES
+   |-Urgent Flag          : 0
+   |-Acknowledgement Flag : 0
+   |-Push Flag            : 1
+   |-Reset Flag           : 0
+   |-Synchronise Flag     : 1
+   |-Finish Flag          : 0
+   |-Window         : 91
+   |-Checksum       : 1049
+   |-Urgent Pointer : 661
+
+                        DATA Dump                         
+IP Header
+    00 04 00 01 00 06 CC AF 78 C0 1E BD 00 00 08 00         ........x.......
+    45 00 00 34 61 53 40 00 40 06 44 C9 C0 A8 02 07         E..4aS@.@.D.....
+TCP Header
+Data Payload
+    5E 49 80 10 06 2A 94 CE 00 00 01 01 08 0A 00 5B         ^I€..*.........[
+    04 19 95 02 50 A8                                       ....P.
+
+###########################################################
+
+***********************TCP Packet*************************
+
+Ethernet Header
+   |-Destination Address : 00-00-00-01-00-06 
+   |-Source Address      : 94-44-52-0C-71-73 
+   |-Protocol            : 0 
+
+IP Header
+   |-IP Version        : 0
+   |-IP Header Length  : 8 DWORDS or 32 Bytes
+   |-Type Of Service   : 0
+   |-IP Total Length   : 17696  Bytes(Size of Packet)
+   |-Identification    : 1402
+   |-TTL      : 0
+   |-Protocol : 0
+   |-Checksum : 14086
+   |-Source IP        : 149.190.173.194
+   |-Destination IP   : 36.54.192.168
+
+TCP Header
+   |-Source Port      : 24794
+   |-Destination Port : 32792
+   |-Sequence Number    : 65691589
+   |-Acknowledge Number : 257
+   |-Header Length      : 0 DWORDS or 0 BYTES
+   |-Urgent Flag          : 0
+   |-Acknowledgement Flag : 0
+   |-Push Flag            : 1
+   |-Reset Flag           : 0
+   |-Synchronise Flag     : 1
+   |-Finish Flag          : 0
+   |-Window         : 38146
+   |-Checksum       : 20648
+   |-Urgent Pointer : 23296
+
+                        DATA Dump                         
+IP Header
+    00 00 00 01 00 06 94 44 52 0C 71 73 00 00 08 00         .......DR.qs....
+    45 20 05 7A 53 F8 00 00 37 06 95 BE AD C2 24 36         E .zS...7.....$6
+TCP Header
+Data Payload
+    60 DA 80 18 03 EA 5F C5 00 00 01 01 08 0A 95 02         `.€..._.........
+    50 A8 00 5B 03 29 17 03 02 05 41 CD 97 74 A2 F0         P..[.)....A..t..
+    C4 C3 F3 EB 01 59 E0 58 AC AF 6C B7 06 D6 A0 95         .....Y.X..l.....
+    9B D1 BF 05 1F 1B F0 21 30 9C 35 62 B3 B0 39 97         .......!0.5b..9.
+    91 23 D7 15 89 BB 1E 2D 3F EA D6 B1 28 C7 66 05         .#.....-?...(.f.
+    78 6D 1C 91 A7 EB 07 8E 7F 37 AB FE EE 4D 79 2B         xm......7...My+
+    C6 A5 6A 0C 77 ED 99 F4 48 9F 9F 45 B8 B4 5C B8         ..j.w...H..E..\.
+    3D CB 55 57 C4 6E 1A 17 08 50 E6 4C 8E BC 33 C8         =.UW.n...P.L..3.
+    E6 6B DF 31 83 99 95 20 3C AB C1 9F 0C D6 B4 1E         .k.1... <.......
+    63 55 6F 1E 40 8F 64 F6 C6 30 93 32 DD 08 57 D6         cUo.@.d..0.2..W.
+    C0 F1 51 D4 9F 21 5A 4C DA B7 18 8F 2E 10 E0 C8         ..Q..!ZL........
+    B0 DF EB C2 A4 41 88 62 59 3D 8A BD E9 79 79 23         .....A.bY=...yy#
+    80 51 DE FC EF 52 BB 90 FA 84 A5 78 41 F2 72 D1         €Q...R.....xA.r.
+    21 3C 7F 4B 8E F5 47 AA FB 95 37 A2 59 20 59 06         !<K..G...7.Y Y.
+    7B 49 7B 55 26 D2 0F B1 68 82 DF FF AF C5 E5 6C         {I{U&...h......l
+    58 DF 4F D3 42 E6 1A F3 80 6A 23 F6 48 BB A3 3D         X.O.B...€j#.H..=
+    29 64 35 38 AB 1E 56 F0 71 82 72 30 57 AC AE 16         )d58..V.q.r0W...
+    AB 11 7B 3D DA D2 C1 CC AD 71 63 BA DF 59 8B BD         ..{=.....qc..Y..
+    7B 61 40 83 84 AB 77 1C 6D 0E 67 B2 2C 29 8A 57         {a@...w.m.g.,).W
+    0D DB 54 0E 32 14 D1 7E E7 E9 50 19 F3 87 5B 55         ..T.2..~..P...[U
+    82 FB 88 11 0F AC 38 81 EF 07 5D 2F 89 8F 6A CE         ......8...]/..j.
+    D5 FF DA 64 50 06 E7 D3 9C CF 56 6C 55 E2 A5 83         ...dP.....VlU...
+    C3 50 FF B2 6C 11 47 3A 04 46 5C 7A B4 32 9D D7         .P..l.G:.F\z.2..
+    EE DA 49 D3 FE 16 BD 65 2B 36 BB AC 1C 19 AF 08         ..I....e+6......
+    29 DD 72 2A DE F6 ED 73 55 5A DE 05 5B 92 DD 07         ).r*...sUZ..[...
+    DF 3C 8B D1 DA 3A 5A 4B 32 86 45 94 B2 D5 2F C4         .<...:ZK2.E.../.
+    AD 25 95 88 06 26 77 79 F5 82 7B 96 F9 9A 53 B5         .%...&wy..{...S.
+    DB 82 EA 51 9F E8 4D E9 C0 85 03 27 4C CD 91 7F         ...Q..M....'L..
+    2C F9 60 33 03 4E 32 87 77 19 11 E2 C7 2C F0 31         ,.`3.N2.w....,.1
+    FC E7 B7 EF 83 B0 7B 6B CE 08 43 12 38 27 75 E2         ......{k..C.8'u.
+    7F A8 33 00 A7 CA 16 C8 B0 6F 87 89 02 9E 6F 51         .3......o....oQ
+    A3 75 35 9C 08 FF 9E DD 12 E0 7B 87 67 65 00 6E         .u5.......{.ge.n
+    11 4E 05 24 5B EF 53 37 17 47 C0 3F 46 E5 0C 4D         .N.$[.S7.G.?F..M
+    00 75 05 F0 5A FE BF 4B 4B B6 9D D4 6B F1 1A F7         .u..Z..KK...k...
+    94 58 40 73 31 DD DC A3 2F 42 52 77 D4 01 89 6C         .X@s1.../BRw...l
+    25 4B 45 1D 1F FB F7 E2 19 10 6C 09 28 95 D9 F0         %KE.......l.(...
+    B2 8D 49 96 1C F7 3F C0 06 0A 33 DC 65 E6 BC 87         ..I...?...3.e...
+    96 8C 41 54 AB BE CB 99 19 88 AA DF 97 37 DF F1         ..AT.........7..
+    38 68 7F D6 A4 0F D7 B2 6C 50 E2 5D 70 A6 18 F7         8h.....lP.]p...
+    85 F7 5A 75 D8 79 85 45 DC DC 0C A0 66 2D 40 AF         ..Zu.y.E....f-@.
+    FA 9A 9F 0D 6F 1C BD 29 C5 48 47 DC F8 D4 8F 0F         ....o..).HG.....
+    97 8E 59 61 F9 FA 6C 46 A6 4E D7 AF 04 EC 74 26         ..Ya..lF.N....t&
+    4B 72 1C DF 7B 4C 5B EC 1D 63 6F 0B 99 A9 64 BD         Kr..{L[..co...d.
+    A3 43 68 14 41 FA A0 72 29 AE 40 F6 0F 0F 90 52         .Ch.A..r).@....R
+    30 7D AF CB C0 10 7C AA 22 A5 F2 E8 A3 65 B1 40         0}....|."....e.@
+    47 45 80 D8 D8 EA 9A 16 FF DA 9B 64 A1 53 5E AD         GE€........d.S^.
+    50 BC EB 8E C0 82 E5 43 D8 DD 0E 9F 50 EB 38 1B         P......C....P.8.
+    3B 16 EE 2B 13 B2 50 B5 47 23 F9 3B 21 03 F8 78         ;..+..P.G#.;!..x
+    28 A7 19 24 7D 49 8F 4F 09 A3 B9 34 4F 75 4B 5B         (..$}I.O...4OuK[
+    50 77 37 ED 04 6B 7A F4 89 8A 9C A5 26 0A A0 44         Pw7..kz.....&..D
+    4F 57 A1 79 7E 80 66 E5 D3 8B 80 8F 82 FC 70 5D         OW.y~€f...€...p]
+    25 EA 42 17 41 27 6B 5F AD 53 51 51 D6 D2 24 CF         %.B.A'k_.SQQ..$.
+    9D 2A F2 4B CC 33 12 62 37 EC FB 72 F2 D9 F0 AD         .*.K.3.b7..r....
+    03 71 27 36 DE 3E F9 89 F8 D2 74 46 62 9D 6A 82         .q'6.>....tFb.j.
+    40 D8 DB 85 F0 0B 6C CA 2C 59 C5 F6 B8 70 83 38         @.....l.,Y...p.8
+    5E 34 F7 EE 1E 68 C2 60 EE E7 93 E2 36 0B 30 06         ^4...h.`....6.0.
+    89 4A FC 37 04 6A 6D F4 2A 95 F9 7B DA D5 BD 93         .J.7.jm.*..{....
+    2B F0 CE D8 50 39 EC EA 4C F6 DA 3B A7 68 62 C3         +...P9..L..;.hb.
+    14 17 D8 FA E3 74 A0 85 04 2D ED 20 EE 82 EB C9         .....t...-. ....
+    7B EE CE 96 51 F2 E3 C6 1C 39 68 04 60 F6 ED F9         {...Q....9h.`...
+    8B 14 77 43 2D 0F 07 FE F1 DF 44 44 1A 6D AC C7         ..wC-.....DD.m..
+    83 EB 72 CC 73 F1 3F A0 8C C2 96 CB DD 92 9E B2         ..r.s.?.........
+    4E 9D 48 55 08 7A BC 0F A8 56 1C AE 4B 4E 93 00         N.HU.z...V..KN..
+    D8 8C 0D AA 41 F8 2A 3C 8A 5F 5C 4F A7 A9 BF 09         ....A.*<._\O....
+    2F F4 63 64 47 33 C6 D1 98 CD 41 D1 3E C3 A8 CB         /.cdG3....A.>...
+    81 87 76 F0 4E 72 00 82 F5 EE 56 20 AC A2 6B CE         ..v.Nr....V ..k.
+    9E 37 87 A1 A6 F1 23 FB E4 6E E7 B9 6F BB CA 3B         .7....#..n..o..;
+    58 76 D1 5C B2 B3 8E FA D3 87 2B 2D B0 2C 80 55         Xv.\......+-.,€U
+    48 BC EA 6B 96 DB 1A DC 7D C7 D6 75 A0 0C 7C 56         H..k....}..u..|V
+    94 F0 34 72 32 BF A9 D1 0F F8 33 04 01 F1 F9 AD         ..4r2.....3.....
+    DC BC DB 11 C6 F9 43 BC 28 4E FE 64 3A 12 BB DB         ......C.(N.d:...
+    F7 4A 0A 0B 02 8F 76 16 31 DA 54 B1 23 6E BC A7         .J....v.1.T.#n..
+    1B F2 5D 4B 5D AB BB AC 28 4F FA FA EB DF F7 4D         ..]K]...(O.....M
+    66 6E 49 52 D5 68 D4 4C 35 53 19 89 2A CB F8 EE         fnIR.h.L5S..*...
+    8C 3D 22 28 F2 0A 08 26 B3 B0 5A A4 D0 C6 F9 D0         .="(...&..Z.....
+    90 E7 35 3D 05 5A EC 81 B5 84 E6 03 E2 E7 DD 2E         ..5=.Z..........
+    80 95 C4 B1 F6 09 75 B2 FD D7 D4 76 D7 61 67 E1         €.....u....v.ag.
+    C7 1A C0 83 71 58 B3 26 35 5E 5B 4D 09 8D CF 11         ....qX.&5^[M....
+    52 8F 40 1D B8 13 2E FB 1A 48 69 02 4D F6 8E 46         R.@......Hi.M..F
+    A0 A6 E6 07 E2 BB 80 E7 AE 27 E6 E1 4F 77 4E 79         ......€..'..OwNy
+    4A 48 D3 EA AB 98 12 36 62 57 FF 3C 34 D9 89 AE         JH.....6bW.<4...
+    F4 92 B8 47 32 B5 5F 25 03 15 58 52 4E 8B CD 6A         ...G2._%..XRN..j
+    0B 32 7A C0 D4 86 55 0F 11 A8 6D 31 F3 89 BB DC         .2z...U...m1....
+    D9 D4 9D 78 30 FC E6 F3 1A 1B 55 6D A1 11 1E A6         ...x0.....Um....
+    E8 A3 06 D7 B1 3E 80 BF FE 35 22 D5 4F 9C 1B 85         .....>€..5".O...
+    19 F1 F1 62 46 8D B2 73 AD BB C1 91                     ...bF..s....
+
+###########################################################
+
+***********************TCP Packet*************************
+
+Ethernet Header
+   |-Destination Address : 00-04-00-01-00-06 
+   |-Source Address      : CC-AF-78-C0-1E-BD 
+   |-Protocol            : 0 
+
+IP Header
+   |-IP Version        : 0
+   |-IP Header Length  : 8 DWORDS or 32 Bytes
+   |-Type Of Service   : 0
+   |-IP Total Length   : 17664  Bytes(Size of Packet)
+   |-Identification    : 52
+   |-TTL      : 64
+   |-Protocol : 0
+   |-Checksum : 16390
+   |-Source IP        : 68.200.192.168
+   |-Destination IP   : 2.7.173.194
+
+TCP Header
+   |-Source Port      : 25487
+   |-Destination Port : 32784
+   |-Sequence Number    : 103453902
+   |-Acknowledge Number : 257
+   |-Header Length      : 0 DWORDS or 0 BYTES
+   |-Urgent Flag          : 0
+   |-Acknowledgement Flag : 0
+   |-Push Flag            : 1
+   |-Reset Flag           : 0
+   |-Synchronise Flag     : 1
+   |-Finish Flag          : 0
+   |-Window         : 91
+   |-Checksum       : 1050
+   |-Urgent Pointer : 661
+
+                        DATA Dump                         
+IP Header
+    00 04 00 01 00 06 CC AF 78 C0 1E BD 00 00 08 00         ........x.......
+    45 00 00 34 61 54 40 00 40 06 44 C8 C0 A8 02 07         E..4aT@.@.D.....
+TCP Header
+Data Payload
+    63 8F 80 10 06 2A 94 CE 00 00 01 01 08 0A 00 5B         c.€..*.........[
+    04 1A 95 02 50 A8                                       ....P.
+
+###########################################################
+
+***********************TCP Packet*************************
+
+Ethernet Header
+   |-Destination Address : 00-00-00-01-00-06 
+   |-Source Address      : 94-44-52-0C-71-73 
+   |-Protocol            : 0 
+
+IP Header
+   |-IP Version        : 0
+   |-IP Header Length  : 8 DWORDS or 32 Bytes
+   |-Type Of Service   : 0
+   |-IP Total Length   : 17696  Bytes(Size of Packet)
+   |-Identification    : 1402
+   |-TTL      : 0
+   |-Protocol : 0
+   |-Checksum : 14086
+   |-Source IP        : 149.189.173.194
+   |-Destination IP   : 36.54.192.168
+
+TCP Header
+   |-Source Port      : 24794
+   |-Destination Port : 32792
+   |-Sequence Number    : 65697233
+   |-Acknowledge Number : 257
+   |-Header Length      : 0 DWORDS or 0 BYTES
+   |-Urgent Flag          : 0
+   |-Acknowledgement Flag : 0
+   |-Push Flag            : 1
+   |-Reset Flag           : 0
+   |-Synchronise Flag     : 1
+   |-Finish Flag          : 0
+   |-Window         : 38146
+   |-Checksum       : 20648
+   |-Urgent Pointer : 23296
+
+                        DATA Dump                         
+IP Header
+    00 00 00 01 00 06 94 44 52 0C 71 73 00 00 08 00         .......DR.qs....
+    45 20 05 7A 53 F9 00 00 37 06 95 BD AD C2 24 36         E .zS...7.....$6
+TCP Header
+Data Payload
+    60 DA 80 18 03 EA 75 D1 00 00 01 01 08 0A 95 02         `.€...u.........
+    50 A8 00 5B 03 29 17 03 02 05 41 56 F2 44 9B D8         P..[.)....AV.D..
+    6E D5 C0 CD 86 C3 9C 1B 3B 3D 1E 00 21 54 CD 9E         n.......;=..!T..
+    44 66 B5 50 25 EB D9 39 E3 45 DB 1B AB 0C 9C DB         Df.P%..9.E......
+    0F CC 45 B9 BF BA 5A 48 10 EC FE 3A 24 7D 4F B3         ..E...ZH...:$}O.
+    54 BB 02 B6 95 BB E3 41 F8 A5 F4 40 D8 DA C4 86         T......A...@....
+    8A 40 AD 06 6E 0F 4E 04 D4 12 7F E6 4E 6A D6 58         .@..n.N....Nj.X
+    93 5F F8 70 39 2E 42 4C C9 09 F4 9B 30 B7 14 C1         ._.p9.BL....0...
+    AD 53 DD B5 EA 66 77 BD 6F BA 9A BA 61 41 A6 81         .S...fw.o...aA..
+    24 8C C4 7C CF D7 62 45 13 D7 B1 C9 0C 5F 16 C6         $..|..bE....._..
+    6A A1 BE 81 97 E8 92 C5 04 2D 26 22 8B 6C 66 39         j........-&".lf9
+    48 FC 99 66 2F 94 A3 4C 2C F6 F2 78 8C E0 D4 F0         H..f/..L,..x....
+    6E 62 94 5A 97 9B 09 D9 C7 6F A8 78 2D 3E F9 2F         nb.Z.....o.x->./
+    D3 CA 9A 94 F8 C7 CD FE F0 02 E1 55 E0 F0 6E 98         ...........U..n.
+    63 FA 79 57 9F F2 C2 89 C6 B6 68 18 BA 57 27 16         c.yW......h..W'.
+    52 A0 BB 0C 52 4C 5B 3B F7 47 95 FF 8D 5C 9F 03         R...RL[;.G...\..
+    A3 7F 87 1C 59 C5 93 9E 1B 03 49 E5 E1 5C 75 B1         ...Y.....I..\u.
+    4C E2 44 6B 25 6E 40 CC E7 CB FD 37 5A 70 76 E0         L.Dk%n@....7Zpv.
+    E4 A2 65 80 A9 B9 6F B7 C2 FB 23 4C A5 8D 40 BF         ..e€..o...#L..@.
+    6B 02 7F B2 9A D6 97 C3 4E 2A 16 7A 2A E6 A7 5B         k......N*.z*..[
+    7F C2 B6 00 B3 41 68 FB AD 74 10 59 20 1A B3 57         ....Ah..t.Y ..W
+    1B 61 F7 86 DA 3F 58 29 3F 42 01 A4 0C 55 97 9C         .a...?X)?B...U..
+    80 D1 75 83 07 58 85 B7 2D 4E D0 F7 F8 9C 55 35         €.u..X..-N....U5
+    87 AA 0E 5A 0F E0 D2 7B 4E 7A 9D 64 97 CE F6 B2         ...Z...{Nz.d....
+    09 E1 60 23 69 C4 0A E5 59 88 78 17 B0 C1 1A 44         ..`#i...Y.x....D
+    F8 84 83 AB 30 11 78 DB 23 DF C4 1F BD 6B 93 2A         ....0.x.#....k.*
+    16 ED 4F 49 7F DE 0B 53 04 F4 C8 FB A3 FB 87 05         ..OI..S........
+    0F 87 D9 53 B6 40 83 55 A9 8D E3 ED 7D DB F5 5A         ...S.@.U....}..Z
+    52 39 DD A2 DA B1 93 FD E1 00 89 7D BC CE 5F 43         R9.........}.._C
+    67 65 6F D3 14 16 29 64 D1 CC 61 0C F6 3E EC 37         geo...)d..a..>.7
+    F3 36 AE 16 C5 9A B6 AB 5B 9F 7C 45 7E 8B 84 3B         .6......[.|E~..;
+    05 E1 1C 11 CF 75 9C 38 7D E5 0D 24 FB 21 9F AB         .....u.8}..$.!..
+    AE DF DF D1 42 5A E4 50 7A 94 C5 2D 4A 27 B8 49         ....BZ.Pz..-J'.I
+    D2 EB ED B3 06 FB 9D C3 12 C6 B3 7A EC C7 C6 00         ...........z....
+    FD 87 17 7B E3 D2 51 54 61 61 13 9C B1 F6 EE BF         ...{..QTaa......
+    D8 CF 80 E4 7D 51 55 26 76 AE F7 39 B1 DA D1 7B         ..€.}QU&v..9...{
+    53 9E 42 EB F9 5F FA A9 54 27 C1 85 89 67 F1 C4         S.B.._..T'...g..
+    8A 5C 61 1E CE C2 19 88 5A B4 A9 EB ED E7 3D A7         .\a.....Z.....=.
+    DE AC CD 9A 89 54 F3 B4 41 0B BA 6D A4 5A 78 CB         .....T..A..m.Zx.
+    4E B9 43 E6 E3 0E 3B B4 B4 6C E4 BD B2 F6 CD A7         N.C...;..l......
+    03 7F DA 6D 38 A6 9C DA 62 07 AA 2A FA 34 7C 27         ..m8...b..*.4|'
+    36 44 29 5C 40 35 44 48 37 F1 4D A5 30 41 7D A4         6D)\@5DH7.M.0A}.
+    37 27 F6 36 F9 16 1D 60 84 1A 1C 09 60 12 40 34         7'.6...`....`.@4
+    3E AC A3 2C E4 52 84 A9 DC 32 42 8D E0 8F F3 A2         >..,.R...2B.....
+    A4 C9 DD A6 C9 76 03 C7 19 17 23 09 E3 21 62 8E         .....v....#..!b.
+    50 09 03 01 6D 85 5F EB 22 4C 71 CC EB F7 1E B9         P...m._."Lq.....
+    F2 45 9E 3D 3F 3A 9D 3A 6B B1 F1 9A AE B2 32 56         .E.=?:.:k.....2V
+    E5 5D 9C 3E F4 0E 2F D8 A9 C2 A8 F1 A3 93 D8 60         .].>../........`
+    91 81 27 22 F6 29 2F B8 9F E8 4F 2A 65 22 96 7A         ..'".)/...O*e".z
+    B1 D3 68 48 0E 4D 1C 6C 5B 5D 6F F4 CD F6 AC CB         ..hH.M.l[]o.....
+    58 39 4F 73 1C C8 C3 55 36 04 2F 02 B2 4E D8 E8         X9Os...U6./..N..
+    A8 CA 21 EF 80 8F 42 1A 68 DA 3E 6A E5 97 56 77         ..!.€.B.h.>j..Vw
+    27 6A A0 A6 C2 50 6C 09 58 39 3D 86 94 E4 A1 B5         'j...Pl.X9=.....
+    E9 76 40 BE C4 A4 77 6D C5 85 7E AA 82 33 4D FF         .v@...wm..~..3M.
+    5C 22 03 FC 2B 48 DD 24 D0 22 C1 FE 54 14 98 C8         \"..+H.$."..T...
+    E1 CC B4 FE 31 81 DF 14 5C 1B EB 2C 9D D5 1D E4         ....1...\..,....
+    EF DB 5E 58 1B 63 10 23 65 36 F4 AA FD 9B 0D 08         ..^X.c.#e6......
+    38 BF CF A7 03 E6 DD CA DC 3F D8 04 3B 29 FF 45         8........?..;).E
+    80 B4 94 92 48 C6 8B 6C CE DE F7 55 5C 61 0F 38         €...H..l...U\a.8
+    3D 5E 4E AD AF 59 BF F9 E2 0B 89 D0 E1 07 EF 3A         =^N..Y.........:
+    7C D3 3D F8 55 83 63 7C D6 AF 84 30 58 77 B0 0B         |.=.U.c|...0Xw..
+    87 55 55 DF E0 1C 1B 76 30 7D 86 E7 74 B2 44 4C         .UU....v0}..t.DL
+    D7 17 93 33 6F E8 1B D2 2D E2 EE 7E 8E 8F 0F F5         ...3o...-..~....
+    C2 4F 1B 06 33 3B 94 F3 6C 41 71 E1 EF DC 28 DA         .O..3;..lAq...(.
+    8C 65 B5 7E C3 FC 28 55 F1 26 15 C3 C9 C5 29 EA         .e.~..(U.&....).
+    28 D6 7A 09 50 39 FD 44 A3 08 5F 88 4D F1 77 A9         (.z.P9.D.._.M.w.
+    9F 87 18 F2 A9 87 D3 14 79 1C D2 6D 67 A4 CC 98         ........y..mg...
+    27 1C 62 63 42 03 65 CE 97 8B 7E 90 46 22 F8 8C         '.bcB.e...~.F"..
+    F8 3C F9 CA 08 89 F6 89 DC 8C 97 D8 24 2C 04 74         .<..........$,.t
+    7B 04 2E 09 6C 06 E7 5E 94 BE C2 25 D8 6E 4B FF         {...l..^...%.nK.
+    2D 37 B6 D0 A8 34 1D 6F 19 C7 41 2B AD 00 A2 FE         -7...4.o..A+....
+    D5 98 43 E7 AB FD B4 C2 FF 09 0E CA 65 3E 9A 4C         ..C.........e>.L
+    53 4B 02 A2 7C 7D 9C F2 04 84 4C A0 3C 21 DA E7         SK..|}....L.<!..
+    EF 23 7D A7 69 24 02 2B 90 E2 53 40 2A 43 F1 98         .#}.i$.+..S@*C..
+    33 1B 96 45 75 E4 F4 61 DF A4 C0 92 5A 18 36 87         3..Eu..a....Z.6.
+    67 9A 6A 7E 0A D3 BE B5 2E FF 83 39 34 C5 88 01         g.j~.......94...
+    08 76 2D 96 0D 78 1A 88 DB EF 1F 44 D6 61 5A CD         .v-..x.....D.aZ.
+    31 0A DF 49 7B 91 7F 63 76 79 8D B1 3B 04 A0 6A         1..I{.cvy..;..j
+    EE 4C 62 37 31 E2 EC 0F 6D E0 C1 F8 41 6C 12 2F         .Lb71...m...Al./
+    08 C4 3F 3A 88 59 F2 B2 CB 40 42 CE 05 6F 9B 09         ..?:.Y...@B..o..
+    24 1D 96 A2 C4 FE BA F6 1F B4 51 53 3D A0 2E 05         $.........QS=...
+    A8 3E 29 31 74 2B 83 37 EA BC 44 5D B1 CF E2 19         .>)1t+.7..D]....
+    CB 44 CD E4 63 A2 52 3E 79 0B B7 17 66 FE 34 2C         .D..c.R>y...f.4,
+    0E 93 4A DA 69 70 B1 94 C0 20 38 3A 21 B7 96 28         ..J.ip... 8:!..(
+    68 3F F2 A6 41 A3 D7 5D 4A 6E 2A AC 3F 7F 38 4F         h?..A..]Jn*.?8O
+    B2 26 18 B2 22 A7 30 47 16 77 71 E0                     .&..".0G.wq.
+
+###########################################################
+
+***********************TCP Packet*************************
+
+Ethernet Header
+   |-Destination Address : 00-04-00-01-00-06 
+   |-Source Address      : CC-AF-78-C0-1E-BD 
+   |-Protocol            : 0 
+
+IP Header
+   |-IP Version        : 0
+   |-IP Header Length  : 8 DWORDS or 32 Bytes
+   |-Type Of Service   : 0
+   |-IP Total Length   : 17664  Bytes(Size of Packet)
+   |-Identification    : 52
+   |-TTL      : 64
+   |-Protocol : 0
+   |-Checksum : 16390
+   |-Source IP        : 68.199.192.168
+   |-Destination IP   : 2.7.173.194
+
+TCP Header
+   |-Source Port      : 26837
+   |-Destination Port : 32784
+   |-Sequence Number    : 103453902
+   |-Acknowledge Number : 257
+   |-Header Length      : 0 DWORDS or 0 BYTES
+   |-Urgent Flag          : 0
+   |-Acknowledgement Flag : 0
+   |-Push Flag            : 1
+   |-Reset Flag           : 0
+   |-Synchronise Flag     : 1
+   |-Finish Flag          : 0
+   |-Window         : 91
+   |-Checksum       : 1051
+   |-Urgent Pointer : 661
+
+                        DATA Dump                         
+IP Header
+    00 04 00 01 00 06 CC AF 78 C0 1E BD 00 00 08 00         ........x.......
+    45 00 00 34 61 55 40 00 40 06 44 C7 C0 A8 02 07         E..4aU@.@.D.....
+TCP Header
+Data Payload
+    68 D5 80 10 06 2A 94 CE 00 00 01 01 08 0A 00 5B         h.€..*.........[
+    04 1B 95 02 50 A8                                       ....P.
+
+###########################################################
+
+***********************TCP Packet*************************
+
+Ethernet Header
+   |-Destination Address : 00-00-00-01-00-06 
+   |-Source Address      : 94-44-52-0C-71-73 
+   |-Protocol            : 0 
+
+IP Header
+   |-IP Version        : 0
+   |-IP Header Length  : 8 DWORDS or 32 Bytes
+   |-Type Of Service   : 0
+   |-IP Total Length   : 17696  Bytes(Size of Packet)
+   |-Identification    : 1402
+   |-TTL      : 0
+   |-Protocol : 0
+   |-Checksum : 14086
+   |-Source IP        : 149.188.173.194
+   |-Destination IP   : 36.54.192.168
+
+TCP Header
+   |-Source Port      : 24794
+   |-Destination Port : 32792
+   |-Sequence Number    : 65698462
+   |-Acknowledge Number : 257
+   |-Header Length      : 0 DWORDS or 0 BYTES
+   |-Urgent Flag          : 0
+   |-Acknowledgement Flag : 0
+   |-Push Flag            : 1
+   |-Reset Flag           : 0
+   |-Synchronise Flag     : 1
+   |-Finish Flag          : 0
+   |-Window         : 38146
+   |-Checksum       : 20648
+   |-Urgent Pointer : 23296
+
+                        DATA Dump                         
+IP Header
+    00 00 00 01 00 06 94 44 52 0C 71 73 00 00 08 00         .......DR.qs....
+    45 20 05 7A 53 FA 00 00 37 06 95 BC AD C2 24 36         E .zS...7.....$6
+TCP Header
+Data Payload
+    60 DA 80 18 03 EA 7A 9E 00 00 01 01 08 0A 95 02         `.€...z.........
+    50 A8 00 5B 03 29 17 03 02 05 41 4A 76 96 AD 40         P..[.)....AJv..@
+    40 2B 5A A3 56 3C 49 FB EF B0 D6 C0 CD 8D B5 E8         @+Z.V<I.........
+    CB 76 DB 61 82 E0 2A EB 8D 6A C3 32 B8 AC D5 FD         .v.a..*..j.2....
+    5C 60 C2 97 EC 15 15 00 14 8E E3 53 C4 9C 47 9B         \`.........S..G.
+    7F FE 0B 53 55 9C 98 5A 5A 34 31 95 21 38 2F 13         ..SU..ZZ41.!8/.
+    3B A3 7F 6C C8 34 BE EF 1E D0 BF 80 79 51 17 2C         ;.l.4.....€yQ.,
+    5C 71 9C CC 6F 2D E0 E9 7C 23 B0 75 9E 53 86 D0         \q..o-..|#.u.S..
+    84 3D 33 32 04 CE D7 2D E0 6C 71 14 CF E8 91 DD         .=32...-.lq.....
+    16 54 17 4F 04 93 58 9F AF 4C B9 AB 6C 7A 92 ED         .T.O..X..L..lz..
+    EF 7F F0 B4 DD 17 4B D4 D7 A1 71 AB BA 35 62 F2         .....K...q..5b.
+    16 D6 07 64 5D BD 8E AA 05 E6 38 12 25 C8 E9 A6         ...d].....8.%...
+    24 89 41 E0 01 79 B0 F7 63 79 B7 A2 8F F4 22 01         $.A..y..cy....".
+    3F A0 0A 6B AF 40 BD 9F 79 0D 32 57 08 BF 8E 10         ?..k.@..y.2W....
+    A9 76 75 7E C0 CB 75 71 7F 0C 47 91 F9 DB F3 60         .vu~..uq.G....`
+    C8 8C 80 54 AA FF A8 94 09 3F 5D DC 17 3C 8D BF         ..€T.....?]..<..
+    F0 0E 98 61 FA 52 69 81 13 47 EC DC C5 BF 02 B2         ...a.Ri..G......
+    F7 14 8B 8C F9 CF 73 C5 76 A9 23 84 6C 58 8B FC         ......s.v.#.lX..
+    AC AD EF F3 C0 F9 81 5D 71 51 04 6B CA CF A1 C0         .......]qQ.k....
+    08 87 82 B1 5E 33 E4 D4 AC 4A 41 45 4B C2 E3 20         ....^3...JAEK.. 
+    D4 4E B5 65 F2 87 30 17 15 26 C3 D3 1B 5D 55 1B         .N.e..0..&...]U.
+    8C D6 08 58 BA 40 3E 63 EE 94 03 29 2C 66 43 24         ...X.@>c...),fC$
+    6D 75 AD 3F 53 6B 5D 2B A3 C8 0F 2A 6F 0C F2 13         mu.?Sk]+...*o...
+    9F 1F C0 6C 4E E6 D2 21 04 43 BC 89 4B 46 9F C7         ...lN..!.C..KF..
+    C1 C7 E7 A7 AD 14 DB AA 42 E5 1D 5D D5 59 66 A6         ........B..].Yf.
+    9F AB 54 EB B8 E7 FF 2F 99 02 48 D3 75 A3 34 9A         ..T..../..H.u.4.
+    C3 DD 60 AA D3 75 18 E6 A8 D8 33 7B 3B 57 AB CD         ..`..u....3{;W..
+    87 9B E1 D4 9D E0 1A 06 AC 65 F4 0C C2 77 2F B5         .........e...w/.
+    08 D8 9B ED E3 1E EE 9A CD BE CC 5A 94 40 4C 49         ...........Z.@LI
+    C6 7F E8 64 F8 8E 42 24 0E F8 E7 10 99 5E 41 1A         ..d..B$.....^A.
+    81 1B 80 32 62 52 BB 5E B0 D2 02 53 88 2A 3A 08         ..€2bR.^...S.*:.
+    70 01 63 FA 7D 37 6B 35 1B B4 17 B9 71 80 6F 2B         p.c.}7k5....q€o+
+    94 82 46 7D AC 33 F5 C4 1A BB 4E 7E 8A D7 72 F7         ..F}.3....N~..r.
+    AC 50 3D 91 1C 9F 94 98 BF DF F8 4E 15 50 C2 44         .P=........N.P.D
+    0B CC 8F 1D 86 A7 C2 AE 48 37 26 9F CE F7 D9 3F         ........H7&....?
+    A8 D2 7A 4D 1B AF 9C 53 BD D5 5D 24 42 77 F3 11         ..zM...S..]$Bw..
+    67 45 0C 95 EF 2D 6C B5 32 B2 70 06 6F BB 85 08         gE...-l.2.p.o...
+    B4 4A 8A 99 B2 3F 68 48 8E C8 38 57 EE 7B FB DA         .J...?hH..8W.{..
+    19 4C C3 31 8F AF 4E 01 B6 1E D2 0A 49 50 99 D1         .L.1..N.....IP..
+    31 71 E2 97 02 26 7F 44 35 5D 1B 56 49 BF A6 92         1q...&D5].VI...
+    88 AD 99 39 87 5D 62 D9 A9 DC BF 3A 67 45 61 29         ...9.]b....:gEa)
+    7D 7D E6 CC 41 28 9F BC 58 41 4B 87 7B A1 17 0D         }}..A(..XAK.{...
+    11 21 34 A2 D8 74 34 FC 83 2B C5 0D 49 EA 9E AE         .!4..t4..+..I...
+    D9 FF FB D5 A3 A2 76 25 37 EB 0F 28 37 F0 CF 6F         ......v%7..(7..o
+    F1 D7 E3 68 B5 8F 79 66 FB 48 7A 9E BF 05 01 D3         ...h..yf.Hz.....
+    F5 6F 05 F1 FB E4 61 2C 65 55 E9 74 D3 B1 B6 AF         .o....a,eU.t....
+    83 AB 69 D8 BE 31 41 BA 69 18 EF C1 AA D4 43 00         ..i..1A.i.....C.
+    D7 40 C2 5B CB 56 2C 7A B2 F9 DC 3D F9 13 04 72         .@.[.V,z...=...r
+    41 38 CD E6 04 AA 49 C8 95 C4 DD 9F 2A FD 62 BC         A8....I.....*.b.
+    A9 14 2E 12 1E 17 88 55 DF A0 98 1F FC 07 50 01         .......U......P.
+    AC 5C 0F E5 AB 56 79 6D 19 32 20 1E 57 C5 C6 D5         .\...Vym.2 .W...
+    F8 99 07 19 C4 FB 33 22 61 2D 56 1C 12 2C 23 E0         ......3"a-V..,#.
+    2A 3E 54 28 34 12 52 CD 0B 3A 2D 97 1F 72 D8 EE         *>T(4.R..:-..r..
+    4A 81 A8 97 48 84 CC B8 FC D2 99 FA 4C 1A 0C 51         J...H.......L..Q
+    A8 E5 E3 99 D1 78 87 EF DC 85 E3 E8 E7 C6 61 43         .....x........aC
+    B2 80 AE FB EC 4F DE 0A F9 F9 FA B2 48 4C 41 31         .€...O......HLA1
+    BF 79 A6 CB E0 F5 83 9A 6C E3 16 F6 42 C8 EA 19         .y......l...B...
+    B6 89 D5 55 69 DA 82 A9 31 53 21 9D CD 1A 32 37         ...Ui...1S!...27
+    78 49 DF 4A 66 A9 12 DE 33 F8 42 67 65 47 8B 60         xI.Jf...3.BgeG.`
+    F1 BE 52 83 CF 37 4B AB B7 A6 7F 04 43 06 61 76         ..R..7K....C.av
+    65 90 D8 39 9C 12 84 36 3B 52 BA CC F3 51 BC 2E         e..9...6;R...Q..
+    E1 C0 9B 3C 5D 8A 8E 8B 2F 39 37 72 3E 43 B1 D8         ...<].../97r>C..
+    A0 25 CE 33 C7 3F ED 3E E8 77 2E 7D 1D E2 9A F3         .%.3.?.>.w.}....
+    32 79 B8 58 95 9F E7 9E 2E CD ED 85 3A 39 63 59         2y.X........:9cY
+    1E BA F4 C0 51 8F 36 32 95 7D AD 03 0E 66 87 F6         ....Q.62.}...f..
+    88 B8 C1 BA 87 C2 CE 45 13 A1 5A 5A 7F E5 98 52         .......E..ZZ..R
+    66 9B 50 DE 4E 3C 61 84 F1 F0 92 CA 6A 1F A9 09         f.P.N<a.....j...
+    76 AA D9 8C D6 FA 08 06 76 6B 59 A7 2E DD ED 09         v.......vkY.....
+    3F 16 B0 43 C6 08 BA EE F7 15 7E 9C 74 35 30 0F         ?..C......~.t50.
+    B7 93 88 EF 09 F8 84 AB 42 96 2A 3F 0A A4 54 E1         ........B.*?..T.
+    18 3B 22 A1 10 F4 85 EA 2C BB E8 D4 24 CF 21 2A         .;".....,...$.!*
+    E4 05 BC 3C 7B B0 7D 60 E1 4B FD 3D E0 5B 5E E4         ...<{.}`.K.=.[^.
+    21 3F 40 65 6D 20 E5 47 8B F1 8C 7D 69 D4 0C 7D         !?@em .G...}i..}
+    5F CA 3D E2 94 83 B7 14 D9 8D FC FB AC 93 08 4F         _.=............O
+    B7 AB 81 AF 9E 78 B3 AC 46 90 9C A1 60 FD 8D 2F         .....x..F...`../
+    2E 16 4A 31 80 4A FD A9 34 FA 49 3C 88 EF B7 86         ..J1€J..4.I<....
+    A2 D5 EE 64 D6 E8 90 B2 37 D2 0F B9 4D 84 12 23         ...d....7...M..#
+    31 5F 38 FB CC C0 0E 08 D5 49 0E 22 45 2B A9 BF         1_8......I."E+..
+    5A E7 8B 28 DC 39 92 D0 A4 F6 81 7D 51 A2 96 47         Z..(.9.....}Q..G
+    B2 A7 E2 3F 22 FC 5D 50 5E D4 FD 58 04 90 D9 E5         ...?".]P^..X....
+    0D 57 96 AC 05 55 7C 7C 1D 44 BA 6B 20 5E 40 0D         .W...U||.D.k ^@.
+    45 51 A5 99 D2 FF A6 CD 10 37 30 59 E1 50 1B CB         EQ.......70Y.P..
+    81 A3 24 19 6F 48 39 23 FA 14 52 D1 3A 5C 5A 4F         ..$.oH9#..R.:\ZO
+    03 7C 2F 90 58 D8 DF EE 75 7E 33 53 77 A2 79 FE         .|/.X...u~3Sw.y.
+    8F 8B D8 33 FA EF 61 3C 20 0F 9C AD 93 8F 46 E8         ...3..a< .....F.
+    25 58 E4 F2 1A F0 7E F0 82 7A F2 7F                     %X....~..z.
+
+###########################################################
+
+***********************TCP Packet*************************
+
+Ethernet Header
+   |-Destination Address : 00-04-00-01-00-06 
+   |-Source Address      : CC-AF-78-C0-1E-BD 
+   |-Protocol            : 0 
+
+IP Header
+   |-IP Version        : 0
+   |-IP Header Length  : 8 DWORDS or 32 Bytes
+   |-Type Of Service   : 0
+   |-IP Total Length   : 17664  Bytes(Size of Packet)
+   |-Identification    : 52
+   |-TTL      : 64
+   |-Protocol : 0
+   |-Checksum : 16390
+   |-Source IP        : 68.198.192.168
+   |-Destination IP   : 2.7.173.194
+
+TCP Header
+   |-Source Port      : 28187
+   |-Destination Port : 32784
+   |-Sequence Number    : 103453902
+   |-Acknowledge Number : 257
+   |-Header Length      : 0 DWORDS or 0 BYTES
+   |-Urgent Flag          : 0
+   |-Acknowledgement Flag : 0
+   |-Push Flag            : 1
+   |-Reset Flag           : 0
+   |-Synchronise Flag     : 1
+   |-Finish Flag          : 0
+   |-Window         : 91
+   |-Checksum       : 1051
+   |-Urgent Pointer : 661
+
+                        DATA Dump                         
+IP Header
+    00 04 00 01 00 06 CC AF 78 C0 1E BD 00 00 08 00         ........x.......
+    45 00 00 34 61 56 40 00 40 06 44 C6 C0 A8 02 07         E..4aV@.@.D.....
+TCP Header
+Data Payload
+    6E 1B 80 10 06 2A 94 CE 00 00 01 01 08 0A 00 5B         n.€..*.........[
+    04 1B 95 02 50 A8                                       ....P.
+
+###########################################################
+
+***********************TCP Packet*************************
+
+Ethernet Header
+   |-Destination Address : 00-00-00-01-00-06 
+   |-Source Address      : 94-44-52-0C-71-73 
+   |-Protocol            : 0 
+
+IP Header
+   |-IP Version        : 0
+   |-IP Header Length  : 8 DWORDS or 32 Bytes
+   |-Type Of Service   : 0
+   |-IP Total Length   : 17696  Bytes(Size of Packet)
+   |-Identification    : 1402
+   |-TTL      : 0
+   |-Protocol : 0
+   |-Checksum : 14086
+   |-Source IP        : 149.187.173.194
+   |-Destination IP   : 36.54.192.168
+
+TCP Header
+   |-Source Port      : 24794
+   |-Destination Port : 32792
+   |-Sequence Number    : 65699666
+   |-Acknowledge Number : 257
+   |-Header Length      : 0 DWORDS or 0 BYTES
+   |-Urgent Flag          : 0
+   |-Acknowledgement Flag : 0
+   |-Push Flag            : 1
+   |-Reset Flag           : 0
+   |-Synchronise Flag     : 1
+   |-Finish Flag          : 0
+   |-Window         : 38146
+   |-Checksum       : 20648
+   |-Urgent Pointer : 23296
+
+                        DATA Dump                         
+IP Header
+    00 00 00 01 00 06 94 44 52 0C 71 73 00 00 08 00         .......DR.qs....
+    45 20 05 7A 53 FB 00 00 37 06 95 BB AD C2 24 36         E .zS...7.....$6
+TCP Header
+Data Payload
+    60 DA 80 18 03 EA 7F 52 00 00 01 01 08 0A 95 02         `.€...R........
+    50 A8 00 5B 03 29 17 03 02 05 41 2D 99 E6 9E CC         P..[.)....A-....
+    D7 9B D0 0D 5F 9A 69 4E C2 72 AE A5 75 0D 53 70         ...._.iN.r..u.Sp
+    E3 D8 43 69 4A 3F A6 67 CF 2A 4F 8C 36 8C E9 67         ..CiJ?.g.*O.6..g
+    23 33 51 78 C3 C0 D5 B8 CB ED 9D FA 10 97 57 B7         #3Qx..........W.
+    A6 06 EC B0 CC BE E7 4F 81 D4 8C 08 4D 41 5E 06         .......O....MA^.
+    07 01 3A 61 3E 2C FA 55 88 FC E0 81 A0 73 AA 0B         ..:a>,.U.....s..
+    28 C9 00 4A 3B 11 7B D7 35 F1 BA 21 C6 64 A1 7A         (..J;.{.5..!.d.z
+    F7 6A 14 2F 8C 6C 3B 0A 49 BE DF 6D A8 07 DF 33         .j./.l;.I..m...3
+    AE 99 FF 83 1C 3A 53 45 C3 6D 85 73 B0 BA 83 C7         .....:SE.m.s....
+    7B 13 02 E5 98 4A B2 63 6C 9D 00 97 CA 4B 73 68         {....J.cl....Ksh
+    C5 05 33 D4 04 09 30 27 B7 12 FF 9A E8 00 E2 CD         ..3...0'........
+    5E 36 91 6D 35 BD 49 5D C6 B1 92 24 98 6F C1 48         ^6.m5.I]...$.o.H
+    02 8E 2B DB 9C BB 53 FC 57 BD 12 4C 97 16 66 5C         ..+...S.W..L..f\
+    BF 75 82 F2 CA 1F C3 42 BF 13 86 F7 46 D2 AE 95         .u.....B....F...
+    9B 30 CA A1 EA C6 3F 66 59 F2 60 6E 98 E4 63 4F         .0....?fY.`n..cO
+    65 25 8D D3 D5 87 BD 2F D3 0C 81 27 FC 48 BE 09         e%...../...'.H..
+    B1 D1 55 2F 30 CA 3B A8 52 3A 2E A9 AE 77 12 0A         ..U/0.;.R:...w..
+    7D F2 C0 CD FF B5 E6 DE 16 5C 43 15 67 25 48 1E         }........\C.g%H.
+    8A D1 C2 E6 84 FB 37 45 3B 10 E0 CF 0D 4C EC F9         ......7E;....L..
+    53 8A 14 53 C4 98 4D 12 6F E0 8A 66 39 25 2E 82         S..S..M.o..f9%..
+    3A 4F 8D AB 78 A1 2F 47 2C 4D B5 30 25 2A CB A4         :O..x./G,M.0%*..
+    69 18 42 11 F3 C2 CC 47 27 5B 3F E0 8F 21 0D 8A         i.B....G'[?..!..
+    B4 76 2B A0 3D 0D DE 36 6B 71 59 44 E9 8F F8 AA         .v+.=..6kqYD....
+    D0 68 72 97 5C 29 5F 44 63 41 08 83 42 C5 04 25         .hr.\)_DcA..B..%
+    4D 54 29 C9 FD CF A5 E6 E2 0B E8 37 C0 AA DE F9         MT)........7....
+    C5 B9 92 E9 C4 10 1A AF 5E 97 A4 C9 9E A4 02 4E         ........^......N
+    64 62 24 CF 03 47 C2 EA EF 77 0B 4C FF 96 72 61         db$..G...w.L..ra
+    80 34 AE EB A7 0F AF A5 8B C1 67 D0 BA AE 1C 1A         €4........g.....
+    AF 3C 01 45 22 C9 86 74 BB B3 CC 74 D8 B3 81 F4         .<.E"..t...t....
+    B6 3A D4 1E 9A 08 1B 70 DA E1 69 E6 42 87 F7 BA         .:.....p..i.B...
+    D2 8D F8 23 28 D8 D8 BC 90 D1 B5 4F 47 72 0A D0         ...#(......OGr..
+    DD 5D EF 61 4E 74 7F 46 A8 2D 2C 74 26 41 1B E6         .].aNtF.-,t&A..
+    35 A4 2A 6E 78 72 01 B2 D2 C3 C0 6F AE 67 34 C5         5.*nxr.....o.g4.
+    FC 6B 19 6C 32 60 87 DF 04 7E 20 87 9B 91 78 92         .k.l2`...~ ...x.
+    21 0A E3 E2 2D 16 17 66 A9 4B 07 2A 16 87 4E 85         !...-..f.K.*..N.
+    38 6C 40 CF E2 78 BD B8 17 20 95 C6 38 31 EC 02         8l@..x... ..81..
+    AF 20 5A AD DC 05 A4 2B 53 26 EA FE 88 60 1B C2         . Z....+S&...`..
+    15 A0 A7 D5 4F 75 3B 95 5B 66 87 78 30 7A 60 09         ....Ou;.[f.x0z`.
+    AA 5C A2 37 38 51 67 4B A2 3C DE 0E B5 3E 57 A2         .\.78QgK.<...>W.
+    32 0F 1E 13 BE B7 41 10 E3 4A FF 13 68 88 60 36         2.....A..J..h.`6
+    9A A5 3F E5 2E DE CA D7 0C BE 31 16 12 07 EA 83         ..?.......1.....
+    A2 39 B3 C0 E1 7F 4B 7E 7D 05 A5 28 E3 7F 46 31         .9...K~}..(.F1
+    27 94 79 20 E0 FB ED 31 FF 22 33 BB 5C 0D 66 BD         '.y ...1."3.\.f.
+    7D EE 67 5F 3A 5A 89 AF 58 39 08 02 58 D9 EB D1         }.g_:Z..X9..X...
+    2D 76 35 77 77 79 B1 22 54 B7 43 16 FE 8E 00 F2         -v5wwy."T.C.....
+    AA AC FB 3E 79 57 5E 4C C7 47 F3 F6 FE D4 55 34         ...>yW^L.G....U4
+    63 76 54 69 01 76 30 CB 07 A5 15 D7 A5 1E 4E 4C         cvTi.v0.......NL
+    B0 71 AD 3C 1B D1 98 4E 52 74 E9 D6 37 3A 95 C7         .q.<...NRt..7:..
+    D8 C3 97 E8 04 F8 D6 F7 3F 06 0A 6A 06 F1 DF 4D         ........?..j...M
+    05 AE 3D C8 60 9A FB 25 27 92 90 9D 83 99 76 AF         ..=.`..%'.....v.
+    80 5E 5E DF 15 80 58 B2 20 82 CC AC F7 1E 1D FE         €^^..€X. .......
+    BB 07 B6 5B E7 37 1C B1 26 78 B2 D3 15 AD A3 20         ...[.7..&x..... 
+    2D 52 49 0D 4C 1A C1 A9 B7 66 84 42 CB 40 A9 73         -RI.L....f.B.@.s
+    FF A4 52 6D D6 D3 93 A6 84 EE 1F 54 F2 20 E8 CD         ..Rm.......T. ..
+    A7 17 ED A8 6B FB E3 F1 4E CB 42 5E 49 A6 A9 69         ....k...N.B^I..i
+    53 3D 0F B8 35 B5 44 E7 08 68 E3 19 BC CA 1B C3         S=..5.D..h......
+    20 3F 1E 84 02 98 FC 90 FB 9D 78 EE DB 9A 80 29          ?........x...€)
+    C5 C9 BB C3 B0 0E 61 14 C2 6B 78 08 AB 23 63 AB         ......a..kx..#c.
+    3C EA 1A 80 A6 0E 0B 16 EA EF 61 89 CD DA BE 16         <..€......a.....
+    DE BA 2B 32 4B DB F5 60 E6 40 D2 D0 B3 32 C9 BD         ..+2K..`.@...2..
+    73 72 88 59 3C E4 89 F5 A6 02 2C 32 11 71 4B E4         sr.Y<.....,2.qK.
+    38 A2 7C 64 18 A4 08 14 7A 43 22 FB 38 03 33 C7         8.|d....zC".8.3.
+    0B 31 27 8A FA AE 37 99 4B 64 72 2E 0E 3F EC F2         .1'...7.Kdr..?..
+    64 FD E1 35 17 30 16 7E 3B C5 43 78 04 E9 33 E7         d..5.0.~;.Cx..3.
+    23 37 87 B7 C0 2B D4 61 EE 38 53 54 46 88 39 61         #7...+.a.8STF.9a
+    E2 7D 51 46 A1 A4 E7 D7 E4 8A 93 D7 49 05 B2 90         .}QF........I...
+    D8 DC B6 01 44 4B 7A EE 1A C9 F6 8D E3 64 9E E6         ....DKz......d..
+    13 13 0A 8E ED 32 DC 89 09 21 36 7B F8 A5 21 D0         .....2...!6{..!.
+    13 B8 23 60 22 DC CA 4A 47 56 EC 4D 01 EB 1F 6D         ..#`"..JGV.M...m
+    BD 93 43 EB FF B3 DF F3 75 36 98 87 72 73 8B DF         ..C.....u6..rs..
+    88 CE E3 7A 74 84 6A D1 65 DD 0C AE F4 84 67 55         ...zt.j.e.....gU
+    6B 25 58 D6 F6 CB B0 81 B2 E8 64 15 B4 B4 0D 9D         k%X.......d.....
+    08 A4 0D B7 D8 DC 53 64 2E 51 62 5D 66 59 62 D4         ......Sd.Qb]fYb.
+    CD 9B 42 BE F1 88 BC F9 9D 9E A8 2C AC 25 A7 9A         ..B........,.%..
+    88 BD 54 C0 3D 14 88 D4 11 7C 9D 66 99 5C 3E 84         ..T.=....|.f.\>.
+    26 E1 07 2B F8 D2 8C 1D 3A CE 6E 9E EF BA E3 BE         &..+....:.n.....
+    9A 97 7F B2 A6 D4 4C A2 0A C1 1A 1D 45 C3 C9 AB         .....L.....E...
+    3E 63 75 D9 53 6A A7 90 54 7A 05 B7 05 16 D9 90         >cu.Sj..Tz......
+    CA 27 40 00 F4 14 AE 3D BC BE 8D 72 30 7C 92 9F         .'@....=...r0|..
+    04 66 9E 35 8D 90 61 62 F6 DD 92 7A F6 50 E0 3F         .f.5..ab...z.P.?
+    8D AF 61 EC BD 6F 88 0C 8A B5 8B 3E 36 AE 48 6A         ..a..o.....>6.Hj
+    60 E4 67 5C 3E E7 96 4C 3C C4 26 BB F2 AC 6E 9F         `.g\>..L<.&...n.
+    CE D2 55 80 6E 71 45 6B C8 CB A5 D4 6E 29 FE 9C         ..U€nqEk....n)..
+    14 10 D7 3F 84 B1 84 1B DE 43 13 1A 27 F2 F0 8F         ...?.....C..'...
+    8F 42 97 C8 76 0A 58 64 7F B6 52 E6                     .B..v.Xd.R.
+
+###########################################################
+
+***********************TCP Packet*************************
+
+Ethernet Header
+   |-Destination Address : 00-04-00-01-00-06 
+   |-Source Address      : CC-AF-78-C0-1E-BD 
+   |-Protocol            : 0 
+
+IP Header
+   |-IP Version        : 0
+   |-IP Header Length  : 8 DWORDS or 32 Bytes
+   |-Type Of Service   : 0
+   |-IP Total Length   : 17664  Bytes(Size of Packet)
+   |-Identification    : 52
+   |-TTL      : 64
+   |-Protocol : 0
+   |-Checksum : 16390
+   |-Source IP        : 68.197.192.168
+   |-Destination IP   : 2.7.173.194
+
+TCP Header
+   |-Source Port      : 29537
+   |-Destination Port : 32784
+   |-Sequence Number    : 103453902
+   |-Acknowledge Number : 257
+   |-Header Length      : 0 DWORDS or 0 BYTES
+   |-Urgent Flag          : 0
+   |-Acknowledgement Flag : 0
+   |-Push Flag            : 1
+   |-Reset Flag           : 0
+   |-Synchronise Flag     : 1
+   |-Finish Flag          : 0
+   |-Window         : 91
+   |-Checksum       : 1052
+   |-Urgent Pointer : 661
+
+                        DATA Dump                         
+IP Header
+    00 04 00 01 00 06 CC AF 78 C0 1E BD 00 00 08 00         ........x.......
+    45 00 00 34 61 57 40 00 40 06 44 C5 C0 A8 02 07         E..4aW@.@.D.....
+TCP Header
+Data Payload
+    73 61 80 10 06 2A 94 CE 00 00 01 01 08 0A 00 5B         sa€..*.........[
+    04 1C 95 02 50 A8                                       ....P.
+
+###########################################################

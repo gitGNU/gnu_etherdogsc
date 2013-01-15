@@ -18,10 +18,27 @@
 #    along with EtherDogs. If not, see <http://www.gnu.org/licenses/>.
 
 
-etherdogs:main.c data.c ether.c ip.c udp.c tcp.c icmp.c help.c proto.c
-etherdogs:main.c data.c ether.c ip.c udp.c tcp.c icmp.c help.c
-	gcc -c  main.c data.c ether.c ip.c udp.c tcp.c icmp.c help.c proto.c -lpcap
+etherdogs:main.o data.o ether.o ip.o udp.o tcp.o icmp.o help.o proto.o
 	gcc -o etherdogs  main.o data.o ether.o ip.o udp.o tcp.o icmp.o help.o proto.o -lpcap
+
+main.o:main.c
+	gcc -c main.c -lcap
+ether.o:ether.c
+	gcc -c ether.c
+tcp.o:tcp.c
+	gcc -c tcp.c
+udp.o:udp.c
+	gcc -c udp.c
+icmp.o:icmp.c
+	gcc -c icmp.c
+ip.o:ip.c
+	gcc -c ip.c
+proto.o:proto.c
+	gcc -c proto.c
+data.o:data.c
+	gcc -c data.c
+help.o:help.c
+	gcc -c help.c
 clean:
 	rm *.o
 	rm etherdogs

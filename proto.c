@@ -21,12 +21,12 @@ This file is part of EtherDogs.
 #include "common.h"
 
 int common = 0; 
-void proto_capture(const u_char * device_name,u_char * protocol_filter)
+void proto_capture(const u_char * device_name,u_char * protocol_filter,int n )
 {
 	pcap_t *handle;
 	char errbuf[100];
-	
-	printf("Opening device %s for sniffing ... " , device_name);
+		
+	printf("Opening device '%s' for sniffing ... " , device_name);
 	handle = pcap_open_live(device_name , 65536 , 1 , 0 , errbuf);
 	
 	if (handle == NULL) 
@@ -43,7 +43,7 @@ void proto_capture(const u_char * device_name,u_char * protocol_filter)
 	}
 	
 	//Put the device in sniff loop
-	pcap_loop(handle , -1 , process_proto_packet ,protocol_filter);
+	pcap_loop(handle ,n , process_proto_packet ,protocol_filter);
 }
 
 
@@ -82,6 +82,6 @@ void process_proto_packet(u_char *args, const struct pcap_pkthdr *header,const u
 			++common;
 		}
 			
-	
-	printf("%s : %d\r",args,common);
+		
+	printf("%s : %d \r",args,common);
 }
