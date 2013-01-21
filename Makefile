@@ -18,8 +18,8 @@
 #    along with EtherDogs. If not, see <http://www.gnu.org/licenses/>.
 
 
-etherdogs:main.o data.o ether.o ip.o udp.o tcp.o icmp.o help.o proto.o
-	gcc -o etherdogs  main.o data.o ether.o ip.o udp.o tcp.o icmp.o help.o proto.o -lpcap
+etherdogs:main.o data.o ether.o ip.o udp.o tcp.o icmp.o help.o
+	gcc -o etherdogs  main.o data.o ether.o ip.o udp.o tcp.o icmp.o help.o -lpcap
 
 main.o:main.c
 	gcc -c main.c -lcap
@@ -33,8 +33,6 @@ icmp.o:icmp.c
 	gcc -c icmp.c
 ip.o:ip.c
 	gcc -c ip.c
-proto.o:proto.c
-	gcc -c proto.c
 data.o:data.c
 	gcc -c data.c
 help.o:help.c
@@ -47,4 +45,4 @@ install:
 remove:
 	rm /usr/bin/etherdogs
 debug:
-	gcc -g -o etherdogs_dbg main.c data.c ether.c ip.c udp.c tcp.c icmp.c help.c proto.c -lpcap
+	gcc -g -o etherdogs_dbg main.c data.c ether.c ip.c udp.c tcp.c icmp.c help.c -lpcap

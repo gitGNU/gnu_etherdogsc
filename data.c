@@ -13,7 +13,7 @@ This file is part of EtherDogs.
     but WITHOUT ANY WARRANTY; without even the implied warranty of
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU General Public License for more details.
-
+    
     You should have received a copy of the GNU General Public License
     along with EtherDogs. If not, see <http://www.gnu.org/licenses/>.
 */
@@ -22,45 +22,46 @@ This file is part of EtherDogs.
 
 void PrintData (const u_char * data , int Size)
 {
-	int i , j;
-	for(i=0 ; i < Size ; i++)
+  int i , j;
+  for(i=0 ; i < Size ; i++)
+    {
+      if( i!=0 && i%16==0)   //if one line of hex printing is complete...
 	{
-		if( i!=0 && i%16==0)   //if one line of hex printing is complete...
+	  fprintf(dogslog , "         ");
+	  for(j=i-16 ; j<i ; j++)
+	    {
+	      if(isprint(data[j]))
 		{
-			fprintf(dogslog , "         ");
-			for(j=i-16 ; j<i ; j++)
-			{
-				if(data[j]>=32 && data[j]<=128)
-					fprintf(dogslog , "%c",(unsigned char)data[j]); //if its a number or alphabet
-				
-				else fprintf(dogslog , "."); //otherwise print a dot
-			}
-			fprintf(dogslog , "\n");
-		} 
-		
-		if(i%16==0) fprintf(dogslog , "   ");
-			fprintf(dogslog , " %02X",(unsigned int)data[i]);
-				
-		if( i==Size-1)  //print the last spaces
-		{
-			for(j=0;j<15-i%16;j++) 
-			{
-			  fprintf(dogslog , "   "); //extra spaces
-			}
-			
-			fprintf(dogslog , "         ");
+		  fprintf(dogslog , "%c",(unsigned char)data[j]); //if its a number or alphabet
+		}
+	      else fprintf(dogslog , "."); //otherwise print a dot
+	    }
+	  fprintf(dogslog , "\n");
+	} 
+      
+      if(i%16==0) fprintf(dogslog , "   ");
+      fprintf(dogslog , " %02X",(unsigned int)data[i]);
+      
+      if( i==Size-1)  //print the last spaces
+	{
+		  for(j=0;j<15-i%16;j++) 
+		    {
+		      fprintf(dogslog , "   "); //extra spaces
+		    }
+		  
+		  fprintf(dogslog , "         ");
 			
 			for(j=i-i%16 ; j<=i ; j++)
-			{
-				if(data[j]>=32 && data[j]<=128) 
-				{
-				  fprintf(dogslog , "%c",(unsigned char)data[j]);
-				}
-				else 
-				{
-				  fprintf(dogslog , ".");
-				}
-			}
+			  {
+			    if(isprint(data[j])) 
+			      {
+				fprintf(dogslog , "%c",(unsigned char)data[j]);
+			      }
+			    else 
+			      {
+				fprintf(dogslog , ".");
+			      }
+			  }
 			
 			fprintf(dogslog ,  "\n" );
 		}

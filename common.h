@@ -47,10 +47,8 @@ void print_tcp_packet(const u_char *, int);
 void print_udp_packet(const u_char *, int);
 void print_icmp_packet(const u_char *, int);
 void printData(const u_char *, int);
-void process_proto(const u_char *, const u_char *);
-void process_proto_packet(u_char *, const struct pcap_pkthdr *,const u_char *);
 void listDevice(void);
-void proto_capture(const u_char *,u_char *,int n);
+void startloop();
 int main();
 
 /*global var, const and struct declarations (only extern)*/
